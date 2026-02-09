@@ -10,6 +10,7 @@ import "swiper/css/navigation";
 
 import { blogs } from "../../data/blogs";
 import Hero from "../../components/Hero";
+import { Link } from "react-router-dom";
 
 
 const projects = [
@@ -17,23 +18,22 @@ const projects = [
     title: "Weatherford",
     subtitle: "Drilling International",
     image: "/images/project-1.jpg",
+    slug: "weatherford-drilling",
   },
   {
     title: "APACHE",
     subtitle: "",
     image: "/images/project-2.jpg",
+    slug: "apache",
   },
   {
     title: "TRINIDAD",
     subtitle: "DRILLING",
     image: "/images/project-3.jpg",
-  },
-  {
-    title: "Halliburton",
-    subtitle: "Energy Services",
-    image: "/images/project-4.jpg",
+    slug: "trinidad-drilling",
   },
 ];
+
 
 const faqs = [
   {
@@ -160,6 +160,196 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+
+       <section className="bg-white py-24">
+      <div className="mx-auto max-w-[1400px] px-6">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <span className="w-16 h-px bg-gray-300"></span>
+            <p className="text-xs uppercase tracking-widest text-gray-400">
+              Project Gallery
+            </p>
+            <span className="w-16 h-px bg-gray-300"></span>
+          </div>
+
+          <h2 className="text-4xl font-bold">
+            <span className="text-red-600">Our Featured</span>{" "}
+            <span className="text-gray-800">Projects</span>
+          </h2>
+        </div>
+
+        {/* Slider */}
+        <Swiper
+          modules={[Navigation]}
+          spaceBetween={24}
+          slidesPerView={3}
+          navigation={{
+            nextEl: ".project-next",
+            prevEl: ".project-prev",
+          }}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 },
+          }}
+        >
+          {projects.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="relative h-[420px] rounded-xl overflow-hidden group">
+
+                {/* Image */}
+                <img
+                  src={item.image}
+                  alt={item.title}
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/30 group-hover:bg-black/50 transition"></div>
+
+                {/* Text */}
+                <div className="absolute bottom-6 left-6 text-white z-10">
+                  <p className="font-semibold text-lg">{item.title}</p>
+                  {item.subtitle && (
+                    <p className="text-sm opacity-90">{item.subtitle}</p>
+                  )}
+                </div>
+
+                {/* Arrow */}
+                <Link
+                to={`/projects/${item.slug}`}
+                className="absolute bottom-6 right-6 w-10 h-10 bg-red-600
+                          rounded-full flex items-center justify-center
+                          text-white z-10
+                          hover:bg-red-700 transition"
+              >
+                <FiArrowUpRight />
+              </Link>
+
+
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+
+        {/* Bottom Controls */}
+        <div className="flex items-center justify-between mt-12">
+
+          {/* Arrows */}
+          <div className="flex gap-3">
+            <button
+              className="project-prev w-12 h-12 rounded-full
+                         bg-red-100 text-red-600
+                         flex items-center justify-center
+                         hover:bg-red-600 hover:text-white transition"
+            >
+              ←
+            </button>
+
+            <button
+              className="project-next w-12 h-12 rounded-full
+                         bg-red-100 text-red-600
+                         flex items-center justify-center
+                         hover:bg-red-600 hover:text-white transition"
+            >
+              →
+            </button>
+          </div>
+
+          {/* CTA */}
+          <a
+            href="/projects"
+            className="border border-red-600 text-red-600
+                       px-6 py-2 rounded-full text-sm
+                       hover:bg-red-600 hover:text-white transition"
+          >
+            Learn More
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+      <section className="bg-white py-24">
+  <div className="mx-auto max-w-[1200px] px-6">
+
+    {/* Heading */}
+    <div className="text-center mb-20">
+      <div className="flex items-center justify-center gap-4 mb-4">
+        <span className="w-20 h-px bg-gray-300"></span>
+        <p className="text-xs uppercase tracking-widest text-gray-400">
+          Why Choose Us
+        </p>
+        <span className="w-20 h-px bg-gray-300"></span>
+      </div>
+
+      <h2 className="text-4xl font-bold text-gray-800">
+        Built on Excellence, <br />
+        <span className="text-red-600">Delivered with Precision.</span>
+      </h2>
+    </div>
+
+    {/* Features */}
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
+
+      {/* Support */}
+      <div>
+        <img
+          src="/icons/call.png"   // or png
+          alt="24/7 Support"
+          className="w-12 h-12 mx-auto mb-6"
+        />
+        <h4 className="font-semibold text-gray-800 mb-3">
+          24/7 SUPPORT
+        </h4>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          We are available to support our clients <br />
+          24/7, 365 days. Call us anytime <br />
+          +971 50 9322 335
+        </p>
+      </div>
+
+      {/* Quality */}
+      <div>
+        <img
+          src="/icons/hand.png"
+          alt="Quality Assurance"
+          className="w-12 h-12 mx-auto mb-6"
+        />
+        <h4 className="font-semibold text-gray-800 mb-3">
+          QUALITY ASSURANCE
+        </h4>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          We ensure that utmost quality is <br />
+          maintained in all our operations and <br />
+          adhere to quality processes.
+        </p>
+      </div>
+
+      {/* Location */}
+      <div>
+        <img
+          src="/icons/map.png"
+          alt="Strategically Located"
+          className="w-12 h-12 mx-auto mb-6"
+        />
+        <h4 className="font-semibold text-gray-800 mb-3">
+          STRATEGICALLY LOCATED
+        </h4>
+        <p className="text-sm text-gray-500 leading-relaxed">
+          We are strategically located at one of <br />
+          the most geographically convenient <br />
+          locations.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
       {/* BLOGS */}
       <section className="bg-white py-24">

@@ -1,4 +1,5 @@
 export default function InnerHero({
+  eyebrow,        // 👈 NEW
   title,
   subtitle,
   buttonText,
@@ -10,27 +11,44 @@ export default function InnerHero({
       className="relative h-[100vh] bg-cover bg-center"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
-      
+      {/* Optional overlay (keep very light or remove if not needed) */}
+      <div className="absolute inset-0 bg-black/20"></div>
 
-      <div className="pt-36 relative z-10 mx-auto max-w-[1400px] px-6 h-full
-                      flex items-center">
+      <div
+        className="relative z-10 mx-auto max-w-[1400px] px-6 h-full
+                   flex items-center pt-36"
+      >
         <div className="text-white max-w-2xl">
-          <h1 className="text-5xl font-bold leading-tight">
+
+          {/* EYEBROW TEXT */}
+          {eyebrow && (
+            <p className="mb-4 text-sm uppercase tracking-widest text-white/70">
+              {eyebrow}
+            </p>
+          )}
+
+          {/* MAIN TITLE */}
+          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
             {title}
           </h1>
 
-          <p className="mt-6 text-white/80">
-            {subtitle}
-          </p>
+          {/* SUBTITLE */}
+          {subtitle && (
+            <p className="mt-6 text-white/80 text-lg">
+              {subtitle}
+            </p>
+          )}
 
+          {/* BUTTON */}
           {buttonText && (
             <a
               href={buttonLink}
-              className="inline-block mt-8
+              className="inline-flex items-center gap-2 mt-8
                          border border-white px-6 py-3 rounded-md
                          hover:bg-white hover:text-black transition"
             >
-              {buttonText} →
+              {buttonText}
+              <span>→</span>
             </a>
           )}
         </div>
