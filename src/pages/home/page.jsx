@@ -9,6 +9,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 
 import { blogs } from "../../data/blogs";
+import Hero from "../../components/Hero";
+
 
 const projects = [
   {
@@ -56,7 +58,7 @@ export default function Page() {
 
   return (
     <main>
-
+       <Hero />
       {/* WE PROVIDE LOGISTICS SOLUTIONS */}
       <section className="bg-white py-24">
         <div className="mx-auto grid max-w-[1400px] grid-cols-1 items-center gap-16 px-10 lg:grid-cols-2">
@@ -265,12 +267,17 @@ export default function Page() {
 
           {/* LEFT: MAP */}
           <div className="w-full h-[450px] rounded-lg overflow-hidden">
-            <iframe
-              title="Google Map"
-              src="https://www.google.com/maps?q=India&output=embed"
-              className="w-full h-full border-0"
-              loading="lazy"
-            />
+           <div className="w-full h-[520px] rounded-md overflow-hidden">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57644.219902197685!2d55.553548!3d25.446161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f9dca6b63c8b%3A0x8c8e7c80f486f275!2sOSS%20FZC%20-%20Logistics!5e0!3m2!1sen!2sin!4v1770355968475!5m2!1sen!2sin"
+    className="w-full h-full border-0"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+    title="OSS Location Map"
+  ></iframe>
+</div>
+
           </div>
 
           {/* RIGHT: CONTACT FORM */}
