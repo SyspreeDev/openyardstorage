@@ -118,49 +118,63 @@ export default function Page() {
       </section>
 
       {/* OUR SERVICES */}
-      <section className="bg-white py-24 text-center">
-        <div className="mx-auto max-w-[1400px] px-10">
-          <div className="flex items-center justify-center gap-4">
-            <span className="w-24 h-px bg-gray-300"></span>
-            <p className="text-xs uppercase tracking-widest text-gray-400">
-              Our Services
-            </p>
-            <span className="w-24 h-px bg-gray-300"></span>
-          </div>
+      {/* OUR SERVICES */}
+<section className="py-24 text-center bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_55%,#FFC5C5_100%)]">
+  <div className="mx-auto max-w-[1400px] px-10">
 
-          <h2 className="mt-4 text-4xl font-bold">
-            Enhancing Your Productivity, <br />
-            <span className="text-red-600">Increasing Your Efficiency</span>
-          </h2>
+    {/* Eyebrow */}
+    <div className="flex items-center justify-center gap-4">
+      <span className="w-24 h-px bg-gray-300"></span>
+      <p className="text-xs uppercase tracking-widest text-gray-400">
+        Our Services
+      </p>
+      <span className="w-24 h-px bg-gray-300"></span>
+    </div>
 
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
-            {[
-              { title: "Ship Freight", image: "/images/ship-freight.jpg" },
-              { title: "Air Freight", image: "/images/air-freight.png" },
-              { title: "Land Transport", image: "/images/land-transport.png" },
-              { title: "Open Yard Storage", image: "/images/openyardstorage.png" },
-              { title: "Customs Clearance", image: "/images/custom.png" },
-              { title: "Warehousing", image: "/images/wareh.jpg" },
-            ].map((service, index) => (
-              <div key={index} className="relative group">
-                <div className="h-66 w-66 rounded-full overflow-hidden shadow-lg">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="h-full w-full object-cover group-hover:scale-110 transition"
-                  />
-                 
-                  <div className="absolute inset-0 flex items-center justify-center text-white font-semibold">
-                    {service.title}
-                    <FiArrowRight className="ml-2" />
-                  </div>
-                </div>
-              </div>
-            ))}
+    {/* Title */}
+    <h2 className="mt-4 text-4xl font-bold text-gray-800">
+      Enhancing Your Productivity, <br />
+      <span className="text-red-600">Increasing Your Efficiency</span>
+    </h2>
+
+    {/* Services Grid */}
+    <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-y-12 gap-x-6 place-items-center">
+
+      {[
+        { title: "Ship Freight", image: "/images/ship-freight.jpg" },
+        { title: "Air Freight", image: "/images/air-freight.png" },
+        { title: "Land Transport", image: "/images/land-transport.png" },
+        { title: "Open Yard Storage", image: "/images/openyardstorage.png" },
+        { title: "Customs Clearance", image: "/images/custom.png" },
+        { title: "Warehousing", image: "/images/wareh.jpg" },
+        { title: "Cross Stuffing & Port Handling Services", image: "/images/port-handling.jpg" },
+        { title: "Container Certification & ISO Tank Decanting", image: "/images/container.jpg" },
+        { title: "Retail Partnership & e-Retailing Solutions", image: "/images/retail.jpg" },
+      ].map((service, index) => (
+        <div
+          key={index}
+          className="group relative w-[220px] h-[220px] md:w-[250px] md:h-[250px] rounded-full overflow-hidden cursor-pointer"
+        >
+          {/* Image */}
+          <img
+            src={service.image}
+            alt={service.title}
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white px-4">
+            <span className="text-center leading-snug text-sm md:text-base font-medium">
+              {service.title}
+            </span>
+            <FiArrowRight className="mt-2 text-lg" />
           </div>
         </div>
-      </section>
+      ))}
 
+    </div>
+  </div>
+</section>
 
        <section className="bg-white py-24">
       <div className="mx-auto max-w-[1400px] px-6">
