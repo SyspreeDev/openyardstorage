@@ -9,6 +9,9 @@ import Founder from "./pages/about/Founder";
 import VisionMission from "./pages/about/VisionMission";
 import Inspiration from "./pages/about/Inspiration";
 import YardForRentInSharjah from "./pages/services/yard-for-rent-sharjah";
+import ContactUs from "./pages/contact-us/Contact-us";
+import MedicalEquipmentandhealthcare from "./pages/industries-we-serve/medical";
+
 
 export default function App() {
   return (
@@ -23,6 +26,9 @@ export default function App() {
         <Route path="/about/vision-mission" element={<VisionMission />} />
         <Route path="/about/inspiration" element={<Inspiration />} />
         <Route path="/services/yard-for-rent-sharjah" element={<YardForRentInSharjah />} />
+        <Route path="/industries/medical" element={<MedicalEquipmentandhealthcare />}
+/>
+        <Route path="/contact-us" element={<ContactUs />} />
         
  
         

@@ -37,8 +37,8 @@ export default function ChallengeSection({
           className="rounded-2xl p-8"
           style={{ backgroundColor: rightBg }}
         >
-          <h4 className="text-sm font-semibold text-gray-700 mb-6">
-            {rightTitle}
+          <h4 className="text-base font-semibold text-gray-800 mb-6 text-center">
+          {rightTitle}
           </h4>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -57,6 +57,7 @@ export default function ChallengeSection({
 function FeatureCard({ icon: Icon, title, text }) {
   return (
     <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+
       <div className="w-10 h-10 flex items-center justify-center rounded-md bg-gray-100 text-xl text-black">
         <Icon />
       </div>

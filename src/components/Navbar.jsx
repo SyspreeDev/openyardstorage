@@ -5,6 +5,21 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
+
+  const industries = [
+    { name: "Medical Equipment and Healthcare", slug: "medical" },
+    { name: "Manufacturing", slug: "manufacturing" },
+    { name: "Construction & Infrastructure", slug: "construction" },
+    { name: "Automotive", slug: "automotive" },
+    { name: "Oil & Gas", slug: "oil-gas" },
+    { name: "FMCG (Fast-Moving Consumer Goods)", slug: "fmcg" },
+    { name: "Retail & E-commerce", slug: "retail" },
+    { name: "Pharmaceuticals", slug: "pharmaceuticals" },
+    { name: "Chemicals", slug: "chemicals" },
+    { name: "Metals & Scrap", slug: "metals" },
+    { name: "Food & Beverages", slug: "food" },
+  ];
 
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
@@ -24,7 +39,7 @@ export default function Navbar() {
 
           <Link to="/">Home</Link>
 
-          {/* ABOUT US */}
+          {/* ABOUT */}
           <div className="relative group">
             <button className="flex items-center gap-1">
               About us <span className="text-xs">▾</span>
@@ -34,18 +49,18 @@ export default function Navbar() {
               <Link to="/about/our-story" className="block px-5 py-3 hover:bg-gray-100">Our Story</Link>
               <Link to="/about/founder" className="block px-5 py-3 hover:bg-gray-100">Founders</Link>
               <Link to="/about/vision-mission" className="block px-5 py-3 hover:bg-gray-100">Vision / Mission / Values</Link>
-              <Link to="/about/inspiration" className="block px-5 py-3 hover:bg-gray-100">Inspiration Behind the Company</Link>
+              <Link to="/about/inspiration" className="block px-5 py-3 hover:bg-gray-100">Inspiration</Link>
             </div>
           </div>
 
-          {/* SERVICES DROPDOWN */}
+          {/* SERVICES */}
           <div className="relative group">
             <button className="flex items-center gap-1">
               Services <span className="text-xs">▾</span>
             </button>
 
-            {/* LEFT MENU */}
             <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+
               {[
                 "Open Yard Storage",
                 "Air Freight",
@@ -70,7 +85,7 @@ export default function Navbar() {
                     <span>›</span>
                   </Link>
 
-                  {/* RIGHT SUB MENU */}
+                  {/* SUBMENU */}
                   {item === "Open Yard Storage" && (
                     <div className="absolute left-full top-0 ml-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all">
                       <Link
@@ -83,14 +98,34 @@ export default function Navbar() {
                   )}
                 </div>
               ))}
+
             </div>
           </div>
 
-          <Link to="/industries">Industries we serve</Link>
+          {/* INDUSTRIES */}
+          <div className="relative group">
+            <button className="flex items-center gap-1">
+              Industries we serve <span className="text-xs">▾</span>
+            </button>
+
+            <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+              {industries.map((item, i) => (
+                <Link
+                  key={i}
+                  to={`/industries/${item.slug}`}
+                  className="block px-5 py-3 hover:bg-gray-100"
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+
           <Link to="/locations">Locations we serve</Link>
           <Link to="/projects">Projects</Link>
           <Link to="/news">News</Link>
-          <Link to="/contact">Contact</Link>
+          <Link to="/contact-us">Contact</Link>
+
         </nav>
 
         {/* MOBILE HAMBURGER */}
@@ -117,7 +152,7 @@ export default function Navbar() {
               <div className="ml-4 flex flex-col gap-3 text-white/80">
                 <Link to="/about/our-story" onClick={() => setOpen(false)}>Our Story</Link>
                 <Link to="/about/founder" onClick={() => setOpen(false)}>Founders</Link>
-                <Link to="/about/vision-mission" onClick={() => setOpen(false)}>Vision / Mission / Values</Link>
+                <Link to="/about/vision-mission" onClick={() => setOpen(false)}>Vision / Mission</Link>
                 <Link to="/about/inspiration" onClick={() => setOpen(false)}>Inspiration</Link>
               </div>
             )}
@@ -137,11 +172,29 @@ export default function Navbar() {
               </div>
             )}
 
-            <Link to="/industries" onClick={() => setOpen(false)}>Industries we serve</Link>
-            <Link to="/locations" onClick={() => setOpen(false)}>Locations we serve</Link>
+            {/* MOBILE INDUSTRIES */}
+            <button onClick={() => setIndustriesOpen(!industriesOpen)} className="flex justify-between">
+              Industries we serve <span>{industriesOpen ? "▲" : "▼"}</span>
+            </button>
+
+            {industriesOpen && (
+              <div className="ml-4 flex flex-col gap-3 text-white/80">
+                {industries.map((item, i) => (
+                  <Link
+                    key={i}
+                    to={`/industries/${item.slug}`}
+                    onClick={() => setOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+            )}
+
+            <Link to="/locations" onClick={() => setOpen(false)}>Locations</Link>
             <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
             <Link to="/news" onClick={() => setOpen(false)}>News</Link>
-            <Link to="/contact" onClick={() => setOpen(false)}>Contact</Link>
+            <Link to="/contact-us" onClick={() => setOpen(false)}>Contact</Link>
 
           </nav>
         </div>

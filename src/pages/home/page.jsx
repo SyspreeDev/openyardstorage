@@ -176,6 +176,7 @@ export default function Page() {
   </div>
 </section>
 
+
        <section className="bg-white py-24">
       <div className="mx-auto max-w-[1400px] px-6">
 

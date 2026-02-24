@@ -1,4 +1,5 @@
 export default function FeatureSection({
+  eyebrow,
   title,
   description,
   features = [],
@@ -7,6 +8,17 @@ export default function FeatureSection({
   return (
     <section style={{ backgroundColor: bgColor }} className="py-16">
       <div className="max-w-6xl mx-auto px-4 text-center">
+
+         {/* Eyebrow */}
+          {eyebrow && (
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <span className="w-12 h-[1px] bg-gray-300" />
+              <p className="text-sm text-gray-500 whitespace-nowrap">
+                {eyebrow}
+              </p>
+              <span className="w-12 h-[1px] bg-gray-300" />
+            </div>
+          )}
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
           {title}
@@ -24,21 +36,29 @@ export default function FeatureSection({
         </p>
 
         {/* Feature Items */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-14">
-          {features.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="text-4xl text-gray-800 mb-4">
-                {item.icon}
-              </div>
-              <h4 className="font-semibold text-gray-800 mb-2">
-                {item.title}
-              </h4>
-              <p className="text-sm text-gray-600 max-w-xs">
-                {item.description}
-              </p>
-            </div>
-          ))}
-        </div>
+       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 mt-14">
+  {features.map((item, index) => (
+    <div key={index} className="flex flex-col items-center text-center">
+      
+      <div className="mb-4">
+        <img
+          src={item.image}
+          alt={item.title}
+          className="w-14 h-14 object-contain mx-auto"
+        />
+      </div>
+
+      <h4 className="font-semibold text-gray-800 mb-2">
+        {item.title}
+      </h4>
+
+      <p className="text-sm text-gray-600 max-w-xs">
+        {item.description}
+      </p>
+
+    </div>
+  ))}
+</div>
       </div>
     </section>
   );
