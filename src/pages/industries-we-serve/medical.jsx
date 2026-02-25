@@ -18,10 +18,16 @@ import {
   FiFileText,
 } from "react-icons/fi";
 import { image } from "framer-motion/client";
+import useMeta from "../../hooks/useMeta";
+
 
 
 
 export default function MedicalEquipmentandhealthcare() {
+   useMeta(
+      "OSS Logistics | Open Yard Storage & Freight UAE",
+      "OSS Logistics provides open yard storage, freight forwarding, warehousing and project logistics solutions across UAE."
+    );
   return (
     <>
       <InnerHero

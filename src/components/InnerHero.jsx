@@ -18,7 +18,7 @@ export default function InnerHero({
         className="relative z-10 mx-auto max-w-[1400px] px-6 h-full
                    flex items-center pt-36"
       >
-        <div className="text-white max-w-2xl">
+        <div className="text-white max-w-6xl">
 
           {/* EYEBROW TEXT */}
           {eyebrow && (
@@ -28,7 +28,7 @@ export default function InnerHero({
           )}
 
           {/* MAIN TITLE */}
-          <h1 className="text-5xl md:text-6xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-5xl font-bold leading-tight">
             {title}
           </h1>
 

@@ -11,6 +11,8 @@ import "swiper/css/navigation";
 import { blogs } from "../../data/blogs";
 import Hero from "../../components/Hero";
 import { Link } from "react-router-dom";
+import useMeta from "../../hooks/useMeta";
+
 
 
 const projects = [
@@ -55,6 +57,11 @@ const faqs = [
 
 export default function Page() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  useMeta(
+    "OSS Logistics | Open Yard Storage & Freight UAE",
+    "OSS Logistics provides open yard storage, freight forwarding, warehousing and project logistics solutions across UAE."
+  );
 
   return (
     <main>
