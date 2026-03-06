@@ -37,6 +37,16 @@ import ForwardingFreightCompanies from "./pages/services/ForwardingFreightCompan
 import InternationalShippingForwarder from "./pages/services/InternationalShippingForwarder";
 import FreightForwardingCompaniesSharjah from "./pages/services/FreightForwardingCompaniesSharjah";
 import CargoServiceDubai from "./pages/services/CargoServiceDubai";
+import LogisticTruckCompanySharjah from "./pages/services/LogisticTruckCompanySharjah";
+import ContainerFreightLogistics from "./pages/services/ContainerFreightLogistics";
+import ContainerLogisticsTransportSharjah from "./pages/services/ContainerLogisticsTransportSharjah";
+import FreightLogisticsServices from "./pages/services/FreightLogisticsServices";
+import FreightForwardingManagement from "./pages/services/FreightForwardingManagement";
+import HamriyahPortSharjah from "./pages/services/HamriyahPortSharjah";
+import InternationalShippingAir from "./pages/services/InternationalShippingAir";
+import ShippingCompaniesSharjah from "./pages/services/ShippingCompaniesSharjah";
+import TransportLogisticSharjah from "./pages/services/TransportLogisticSharjah";
+import WarehouseStorageSpace from "./pages/services/WarehouseStorageSpace";
 
 
 
@@ -145,8 +155,48 @@ export default function App() {
           path="/services/cargo-service-dubai"
           element={<CargoServiceDubai />}
         />
-        
-      </Routes>
+        <Route
+          path="/service/logistic-truck-company-sharjah"
+          element={<LogisticTruckCompanySharjah />}
+        />
+        <Route
+          path="/service/container-freight-logistics"
+          element={<ContainerFreightLogistics />}
+        />
+        <Route
+        path="/service/container-logistics-transport-sharjah"
+        element={<ContainerLogisticsTransportSharjah />}
+        />
+        <Route
+          path="/service/freight-logistics-services"
+          element={<FreightLogisticsServices />}
+        />
+        <Route
+        path="/service/freight-forwarding-management"
+        element={<FreightForwardingManagement />}
+        />
+        <Route
+        path="/service/hamriyah-port-sharjah"
+        element={<HamriyahPortSharjah />}
+        />
+        <Route
+        path="/service/international-shipping-air"
+        element={<InternationalShippingAir />}
+        />
+       <Route
+        path="/service/shipping-companies-sharjah"
+        element={<ShippingCompaniesSharjah />}
+        />
+        <Route
+        path="/service/transport-logistic-service-sharjah"
+        element={<TransportLogisticSharjah />}
+        />
+        <Route
+        path="/service/warehouse-storage-space-for-rent"
+        element={<WarehouseStorageSpace />}
+        />
+    </Routes>
+    
       
       <Footer />
     </BrowserRouter>
