@@ -145,7 +145,7 @@ export default function Page() {
     </h2>
 
     {/* Services Grid */}
-    <div className="mt-16 grid grid-cols-2 sm:grid-cols-3 gap-y-12 gap-x-6 place-items-center">
+    <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8 justify-items-center">
 
       {[
         { title: "Ship Freight", image: "/images/ship-freight.jpg" },
@@ -160,7 +160,7 @@ export default function Page() {
       ].map((service, index) => (
         <div
           key={index}
-          className="group relative w-[220px] h-[220px] md:w-[250px] md:h-[250px] rounded-full overflow-hidden cursor-pointer"
+          className="group relative w-[180px] h-[180px] sm:w-[170px] sm:h-[170px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full overflow-hidden cursor-pointer"
         >
           {/* Image */}
           <img
