@@ -49,8 +49,7 @@ import TransportLogisticSharjah from "./pages/services/TransportLogisticSharjah"
 import WarehouseStorageSpace from "./pages/services/WarehouseStorageSpace";
 import IndustryPage from "./pages/industries-we-serve/IndustryPage";
 import LocationPage from "./pages/locations/LocationPage";
-
-
+import ServicesPage from "./pages/services";
 
 export default function App() {
   return (
@@ -199,6 +198,7 @@ export default function App() {
         />
         <Route path="/industries/:slug" element={<IndustryPage />} />
         <Route path="/locations/:slug" element={<LocationPage />} />
+        <Route path="/services" element={<ServicesPage />} />
     </Routes>
     
       

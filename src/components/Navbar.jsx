@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import services from "../data/servicesList";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -76,47 +77,25 @@ const [projectsOpen, setProjectsOpen] = useState(false);
               Services <span className="text-xs">▾</span>
             </button>
 
-            <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+            <div className="absolute left-0 top-full mt-3 w-72 max-h-[420px] overflow-y-auto bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+  {services.slice(0, 12).map((service, i) => (
+    <Link
+      key={i}
+      to={`/services/${service.slug}`}
+      className="block px-5 py-3 hover:bg-gray-100"
+    >
+      {service.name}
+    </Link>
+  ))}
 
-              {[
-                "Open Yard Storage",
-                "Air Freight",
-                "Sea Freight",
-                "Land Freight",
-                "Customs Clearance",
-                "Warehousing",
-                "Distribution",
-                "Heavy Equipment Rental",
-                "Project Forwarding",
-                "Offshore Logistics",
-                "Lashing & Crating",
-                "Ship Spares Clearance",
-                "Inventory Management",
-              ].map((item, i) => (
-                <div key={i} className="relative group/item">
-                  <Link
-                    to="/services"
-                    className="flex justify-between px-5 py-2 hover:bg-gray-100"
-                  >
-                    {item}
-                    <span>›</span>
-                  </Link>
+  <Link
+    to="/services"
+    className="block px-5 py-3 font-semibold text-red-600 border-t hover:bg-gray-100"
+  >
+    View All Services →
+  </Link>
 
-                  {/* SUBMENU */}
-                  {item === "Open Yard Storage" && (
-                    <div className="absolute left-full top-0 ml-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover/item:opacity-100 group-hover/item:visible transition-all">
-                      <Link
-                        to="/services/yard-for-rent-sharjah"
-                        className="block px-5 py-3 hover:bg-gray-100"
-                      >
-                        Yard for Rent in Sharjah
-                      </Link>
-                    </div>
-                  )}
-                </div>
-              ))}
-
-            </div>
+</div>
           </div>
 
           {/* INDUSTRIES */}
