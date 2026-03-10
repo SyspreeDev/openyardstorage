@@ -21,6 +21,23 @@ export default function Navbar() {
     { name: "Food & Beverages", slug: "food" },
   ];
 
+  const projects = [
+    { name: "Weatherford Drilling International", slug: "weatherford-drilling-international" },
+    { name: "Marine Logistics Sharjah", slug: "marine-logistics-sharjah" },
+    { name: "Warehouse Storage Space", slug: "warehouse-storage-space" }
+  ];
+
+  const locations = [
+  { name: "Shipping Companies in Sharjah", slug: "shipping-companies-in-sharjah" },
+  { name: "Hamriyah Port Sharjah", slug: "hamriyah-port-sharjah" },
+  { name: "Cargo Service To Dubai", slug: "cargo-service-to-dubai" },
+  { name: "Storage Facility In Abu Dhabi", slug: "storage-facility-in-abu-dhabi" }
+];
+
+const [locationsOpen, setLocationsOpen] = useState(false);
+
+const [projectsOpen, setProjectsOpen] = useState(false);
+
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
       <div className="relative mx-auto flex max-w-[1400px] items-center px-6 py-4 text-white">
@@ -121,15 +138,53 @@ export default function Navbar() {
             </div>
           </div>
 
-          <Link to="/locations">Locations we serve</Link>
-          <Link to="/projects">Projects</Link>
+          {/* LOCATIONS */}
+<div className="relative group">
+  <button className="flex items-center gap-1">
+    Locations we serve <span className="text-xs">▾</span>
+  </button>
+
+  <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+
+    {locations.map((item, i) => (
+      <Link
+        key={i}
+        to={`/locations/${item.slug}`}
+        className="block px-5 py-3 hover:bg-gray-100"
+      >
+        {item.name}
+      </Link>
+    ))}
+
+  </div>
+</div>
+          {/* PROJECTS */}
+<div className="relative group">
+  <button className="flex items-center gap-1">
+    Projects <span className="text-xs">▾</span>
+  </button>
+
+  <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+
+    {projects.map((item, i) => (
+      <Link
+        key={i}
+        to={`/projects/${item.slug}`}
+        className="block px-5 py-3 hover:bg-gray-100"
+      >
+        {item.name}
+      </Link>
+    ))}
+
+  </div>
+</div>
           <Link to="/news">News</Link>
           <Link to="/contact-us">Contact</Link>
 
         </nav>
 
         {/* MOBILE HAMBURGER */}
-        <button className="md:hidden flex flex-col gap-1" onClick={() => setOpen(!open)}>
+        <button className="md:hidden flex flex-col gap-1 ml-auto" onClick={() => setOpen(!open)}>
           <span className="h-0.5 w-6 bg-white"></span>
           <span className="h-0.5 w-6 bg-white"></span>
           <span className="h-0.5 w-6 bg-white"></span>
@@ -191,8 +246,43 @@ export default function Navbar() {
               </div>
             )}
 
-            <Link to="/locations" onClick={() => setOpen(false)}>Locations</Link>
-            <Link to="/projects" onClick={() => setOpen(false)}>Projects</Link>
+            <button onClick={() => setLocationsOpen(!locationsOpen)} className="flex justify-between">
+  Locations we serve <span>{locationsOpen ? "▲" : "▼"}</span>
+</button>
+
+{locationsOpen && (
+  <div className="ml-4 flex flex-col gap-3 text-white/80">
+    {locations.map((item, i) => (
+      <Link
+        key={i}
+        to={`/locations/${item.slug}`}
+        onClick={() => setOpen(false)}
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+)}
+           <button
+  onClick={() => setProjectsOpen(!projectsOpen)}
+  className="flex justify-between w-full"
+>
+  Projects <span>{projectsOpen ? "▲" : "▼"}</span>
+</button>
+
+{projectsOpen && (
+  <div className="ml-4 flex flex-col gap-3 text-white/80">
+    {projects.map((item, i) => (
+      <Link
+        key={i}
+        to={`/projects/${item.slug}`}
+        onClick={() => setOpen(false)}
+      >
+        {item.name}
+      </Link>
+    ))}
+  </div>
+)}
             <Link to="/news" onClick={() => setOpen(false)}>News</Link>
             <Link to="/contact-us" onClick={() => setOpen(false)}>Contact</Link>
 

@@ -20,7 +20,7 @@ const projects = [
     title: "Weatherford",
     subtitle: "Drilling International",
     image: "/images/project-1.jpg",
-    slug: "weatherford-drilling",
+    slug: "weatherford-drilling-International",
   },
   {
     title: "APACHE",

@@ -16,6 +16,7 @@ import projectForwarding from "./project-forwarding";
 import offshore from "./offshore-logistics";
 import shipSpares from "./ship-spares-clearance";
 import inventory from "./inventory-management";
+import inventory from "./medical";
 
 export default {
 manufacturing,
