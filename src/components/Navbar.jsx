@@ -79,14 +79,14 @@ const [projectsOpen, setProjectsOpen] = useState(false);
 
             <div className="absolute left-0 top-full mt-3 w-72 max-h-[420px] overflow-y-auto bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
   {services.slice(0, 12).map((service, i) => (
-    <Link
-      key={i}
-      to={`/services/${service.slug}`}
-      className="block px-5 py-3 hover:bg-gray-100"
-    >
-      {service.name}
-    </Link>
-  ))}
+  <Link
+    key={i}
+    to={service.path}
+    className="block px-5 py-3 hover:bg-gray-100"
+  >
+    {service.name}
+  </Link>
+))}
 
   <Link
     to="/services"
