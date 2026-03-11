@@ -82,7 +82,7 @@ export default function CargoServiceDubai() {
             description: "Stay informed at every step of the shipment journey."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/timely-Delivery.png",
             title: "Customized Solutions",
             description: "Shipping strategies tailored to your business."
           },
@@ -92,7 +92,7 @@ export default function CargoServiceDubai() {
             description: "Professional support navigating shipping regulations."
           },
           {
-            image: "/icons/tracking.png",
+            image: "/icons/Real-time.png",
             title: "Advanced Tracking",
             description: "Cutting-edge shipment traceability systems."
           }
