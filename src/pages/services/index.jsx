@@ -147,7 +147,7 @@ export default function ServicesPage() {
             buttonLink="/contact-us"
             backgroundImage="/images/services/Yard-for-Rent-in-Sharjah.jpg"
           />
-   <section className="bg-white pt-[180px] pb-24">
+   <section className="bg-white pt-[100px] pb-24">
       <div className="mx-auto max-w-[1300px] px-6">
 
         <h1 className="text-4xl font-bold text-center mb-16">
