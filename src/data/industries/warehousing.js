@@ -18,7 +18,7 @@ title:"Warehousing Services Built for Efficiency, Scale, and Control",
 subtitle:"Optimise Your Storage Strategy – Speak to Our Experts Today",
 buttonText:"Speak to Our Experts Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/warehousing-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

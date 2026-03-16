@@ -18,7 +18,7 @@ title:"Reliable Ship Spares Clearance Services That Keep Your Vessels Moving",
 subtitle:"Ensure Zero Downtime – Speak to Our Ship Spares Experts Today",
 buttonText:"Speak to Our Ship Spares Experts Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/shipspares-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

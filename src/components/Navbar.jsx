@@ -13,13 +13,13 @@ export default function Navbar() {
     { name: "Manufacturing", slug: "manufacturing" },
     { name: "Construction & Infrastructure", slug: "construction" },
     { name: "Automotive", slug: "automotive" },
-    { name: "Oil & Gas", slug: "oil-gas" },
+    { name: "Oil & Gas", slug: "oilgas" },
     { name: "FMCG (Fast-Moving Consumer Goods)", slug: "fmcg" },
     { name: "Retail & E-commerce", slug: "retail" },
     { name: "Pharmaceuticals", slug: "pharmaceuticals" },
     { name: "Chemicals", slug: "chemicals" },
     { name: "Metals & Scrap", slug: "metals" },
-    { name: "Food & Beverages", slug: "food" },
+    { name: "Food & Beverages", slug: "foodbeverages" },
   ];
 
   const projects = [

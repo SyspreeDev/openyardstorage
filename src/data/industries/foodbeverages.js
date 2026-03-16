@@ -18,7 +18,7 @@ title:"Reliable Food & Beverage Logistics Solutions Built for Precision, Complia
 subtitle:"Move, Store, and Protect Your Food & Beverage Cargo with Confidence",
 buttonText:"Talk to Our Logistics Experts Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/food-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

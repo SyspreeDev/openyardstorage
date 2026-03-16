@@ -18,7 +18,7 @@ title:"Reliable Storage & Logistics Solutions for the Manufacturing Industry",
 subtitle:"Power Your Production with Smarter Logistics – Get a Custom Quote Today",
 buttonText:"Get Custom Quote",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/medical-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 challenge:{

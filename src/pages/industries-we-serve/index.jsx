@@ -7,7 +7,7 @@ import retail from "./retail";
 import pharmaceuticals from "./pharmaceuticals";
 import chemicals from "./chemicals";
 import metalsScrap from "./metals-scrap";
-import foodBeverages from "./food-beverages";
+import foodBeverages from "./foodbeverages";
 import services from "./services";
 import warehousing from "./warehousing";
 import distribution from "./distribution";
@@ -22,13 +22,13 @@ export default {
 manufacturing,
 construction,
 automotive,
-"oil-gas": oilgas,
+"oilgas": oilgas,
 fmcg,
 retail,
 pharmaceuticals,
 chemicals,
 "metals-scrap": metalsScrap,
-"food-beverages": foodBeverages,
+"foodbeverages": foodBeverages,
 services,
 warehousing,
 distribution,

@@ -18,7 +18,7 @@ title:"Heavy Equipment Rental Services Built for Performance, Reliability, and S
 subtitle:"Rent the Right Equipment, Right When You Need It – Request a Quote Today",
 buttonText:"Request a Quote Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/heavy-equipment-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

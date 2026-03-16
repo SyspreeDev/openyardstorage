@@ -212,7 +212,7 @@ cta:{
 title:"Strengthen Your Metals & Scrap Operations with OSS",
 buttonText:"Speak to Our Industrial Logistics Experts",
 buttonLink:"/contact-us",
-backgroundImage:"/images/services/Explore-More.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 }
 
 };

@@ -18,7 +18,7 @@ title:"Specialised Chemical Storage & Logistics Solutions Built for Operational 
 subtitle:"Protect Your Chemical Supply Chain – Speak to Our Experts Today",
 buttonText:"Speak to Our Experts Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/chemicals-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

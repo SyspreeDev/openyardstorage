@@ -18,7 +18,7 @@ title:"Smart Inventory Management Services Built for Modern Supply Chains",
 subtitle:"Streamline, Track, and Optimize Your Inventory with OSS Logistics",
 buttonText:"Talk to Our Inventory Experts Now",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/inventory-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

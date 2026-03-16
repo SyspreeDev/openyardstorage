@@ -18,7 +18,7 @@ title:"End-to-End Distribution Services Built for Speed, Accuracy, and Scale",
 subtitle:"Streamline Your Distribution Network – Request a Customized Solution",
 buttonText:"Request a Customized Solution",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/distribution-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpgg"
 },
 
 

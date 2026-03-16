@@ -18,7 +18,7 @@ title:"Reliable FMCG Logistics Solutions That Keep Products Moving Without Compr
 subtitle:"Power Your FMCG Supply Chain – Get a Custom Storage & Logistics Plan",
 buttonText:"Get a Custom Storage & Logistics Plan",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/fmcg-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

@@ -18,7 +18,7 @@ title:"Storage & Logistics Solutions for Retail and E-commerce Businesses That C
 subtitle:"Streamline Inventory. Scale Faster. Get a Custom Solution Today.",
 buttonText:"Get a Custom Solution Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/retail-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

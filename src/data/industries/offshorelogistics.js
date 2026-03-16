@@ -18,7 +18,7 @@ title:"Integrated Offshore Logistics Services Built for Mission-Critical Operati
 subtitle:"Strengthen Your Offshore Supply Chain – Speak to Our Experts Today",
 buttonText:"Speak to Our Experts Today",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/offshore-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 
