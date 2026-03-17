@@ -13,7 +13,7 @@ metaDescription:"Reliable shipping companies in Sharjah offering freight forward
 
 
 hero:{
-eyebrow:"REVOLUTIONIZING ACCESSIBILITY IN HEALTHCARE",
+
 title:"Expert Shipping Companies in Sharjah",
 subtitle:"Redefining Shipping Companies in Sharjah. Transform Your Shipping Experience in Sharjah with Superior Logistics Solutions",
 buttonText:"Discover Our Journey",
