@@ -17,9 +17,9 @@ export default function CTASection({
 
       {/* Content */}
       <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-white text-3xl md:text-5xl font-semibold mb-8">
+        <h4 className="text-white text-3xl md:text-5xl font-semibold mb-8">
           {title}
-        </h2>
+        </h4>
 
         <a
           href={buttonLink}

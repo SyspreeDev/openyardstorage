@@ -20,9 +20,9 @@ export default function FeatureSection({
             </div>
           )}
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800">
+        <h3 className="text-3xl md:text-4xl font-semibold text-gray-800">
           {title}
-        </h2>
+        </h3>
 
         {/* Divider */}
         <div className="flex justify-center gap-2 my-4">

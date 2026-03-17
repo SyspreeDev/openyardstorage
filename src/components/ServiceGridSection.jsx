@@ -16,9 +16,9 @@ export default function ServiceGridSection({
         )}
 
         {/* Title */}
-        <h2 className="text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-12">
+        <h3 className="text-3xl md:text-4xl font-semibold text-gray-800 mt-2 mb-12">
           {title}
-        </h2>
+        </h3>
 
         {/* Grid */}
         <div
