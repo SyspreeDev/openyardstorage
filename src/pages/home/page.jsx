@@ -295,7 +295,7 @@ export default function Page() {
       </div>
     </section>
 
-      <section className="bg-white py-24">
+      <section className="bg-white py-2">
   <div className="mx-auto max-w-[1200px] px-6">
 
     {/* Heading */}
@@ -422,7 +422,7 @@ export default function Page() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-white py-24">
+      <section className="bg-white py-12">
         <div className="mx-auto max-w-[900px] px-6">
           <div className="text-center mb-16">
             <div className="flex items-center justify-center gap-4 mb-4">
@@ -472,7 +472,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      <section className="bg-white py-24">
+      <section className="bg-white py-10">
       <div className="mx-auto max-w-[1400px] px-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-stretch">
