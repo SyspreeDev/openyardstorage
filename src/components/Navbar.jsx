@@ -9,18 +9,25 @@ export default function Navbar() {
   const [industriesOpen, setIndustriesOpen] = useState(false);
 
   const industries = [
-    { name: "Medical Equipment and Healthcare", slug: "medical" },
-    { name: "Manufacturing", slug: "manufacturing" },
-    { name: "Construction & Infrastructure", slug: "construction" },
-    { name: "Automotive", slug: "automotive" },
-    { name: "Oil & Gas", slug: "oilgas" },
-    { name: "FMCG (Fast-Moving Consumer Goods)", slug: "fmcg" },
-    { name: "Retail & E-commerce", slug: "retail" },
-    { name: "Pharmaceuticals", slug: "pharmaceuticals" },
-    { name: "Chemicals", slug: "chemicals" },
-    { name: "Metals & Scrap", slug: "metals" },
-    { name: "Food & Beverages", slug: "foodbeverages" },
-  ];
+ { name: "Medical Equipment and Healthcare", slug: "medical" },
+ { name: "Manufacturing", slug: "manufacturing" },
+ { name: "Construction & Infrastructure", slug: "construction" },
+ { name: "Automotive", slug: "automotive" },
+ { name: "Oil & Gas", slug: "oilgas" },
+ { name: "FMCG (Fast-Moving Consumer Goods)", slug: "fmcg" },
+ { name: "Retail & E-commerce", slug: "retail" },
+ { name: "Pharmaceuticals", slug: "pharmaceuticals" },
+ { name: "Chemicals", slug: "chemicals" },
+ { name: "Metals & Scrap", slug: "metals" },
+ { name: "Food & Beverages", slug: "foodbeverages" },
+ { name: "Heavy Equipment", slug: "heavyequipment" },
+ { name: "Inventory Management", slug: "inventorymanagement" },
+ { name: "Offshore Logistics", slug: "offshorelogistics" },
+ { name: "Ship Spares", slug: "shipspares" },
+ { name: "Warehousing", slug: "warehousing" },
+ { name: "Distribution", slug: "distribution" },
+ { name: "Project Forwarding", slug: "projectforwarding" }
+];
 
   const projects = [
     { name: "Weatherford Drilling International", slug: "weatherford-drilling-international" },
@@ -103,9 +110,8 @@ const [projectsOpen, setProjectsOpen] = useState(false);
             <button className="flex items-center gap-1">
               Industries we serve <span className="text-xs">▾</span>
             </button>
-
-            <div className="absolute left-0 top-full mt-3 w-72 bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
-              {industries.map((item, i) => (
+ <div className="absolute left-0 top-full mt-3 w-72 max-h-[420px] overflow-y-auto bg-white text-gray-800 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all">
+    {industries.map((item, i) => (
                 <Link
                   key={i}
                   to={`/industries/${item.slug}`}

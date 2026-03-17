@@ -1,108 +1,150 @@
 import InnerHero from "../../components/InnerHero";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function VisionMission() {
-  return (
-    <>
-      <InnerHero
-       subtitle=""
-        buttonText=""
-        buttonLink="#story"
-        backgroundImage="/images/contact/bg.png"
-      title="Contact Us " /> 
+export default function Contact() {
 
-      <section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14">
+const navigate = useNavigate();
 
-    {/* LEFT – CONTACT FORM */}
-    <div>
-      <h3 className="text-2xl font-semibold mb-2">
-        Send us your enquiry online
-      </h3>
-      <p className="text-gray-500 mb-8">
-        We’d love to hear from you. Please fill out this form.
-      </p>
+const [name, setName] = useState("");
+const [email, setEmail] = useState("");
+const [phone, setPhone] = useState("");
+const [message, setMessage] = useState("");
 
-      <form className="space-y-5">
+const handleSubmit = async (e) => {
+ e.preventDefault();
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Name</label>
-          <input
-            type="text"
-            placeholder="Enter your name"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-          />
-        </div>
+ try {
+  const res = await fetch("/api/send", {
+   method: "POST",
+   headers: {
+    "Content-Type": "application/json"
+   },
+   body: JSON.stringify({
+    name,
+    email,
+    phone,
+    message
+   })
+  });
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Email</label>
-          <input
-            type="email"
-            placeholder="you@company.com"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-          />
-        </div>
+  const data = await res.json();
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Phone number</label>
-          <input
-            type="tel"
-            placeholder="+971 50 000 0000"
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-          />
-        </div>
+  if (data.success) {
+    navigate("/thank-you");
+  } else {
+    alert("Failed to send");
+  }
 
-        <div>
-          <label className="block text-sm font-medium mb-1">Message</label>
-          <textarea
-            rows="4"
-            placeholder="Leave us a message..."
-            className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-          ></textarea>
-        </div>
+ } catch (error) {
+  console.log(error);
+  alert("Error sending message");
+ }
+};
+return (
+<>
+<InnerHero
+subtitle=""
+buttonText=""
+buttonLink="#story"
+backgroundImage="/images/contact/bg.png"
+title="Contact Us"
+/>
 
-        <label className="flex items-center gap-2 text-sm text-gray-500">
-          <input type="checkbox" />
-          You agree to our privacy policy.
-        </label>
+<section className="py-20 bg-gray-50">
+<div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-14">
 
-        <button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:to-red-700 text-white py-3 rounded-lg font-medium transition">
-          Send Message
-        </button>
-      </form>
-    </div>
+{/* LEFT FORM */}
+<div>
+<h3 className="text-2xl font-semibold mb-2">
+Send us your enquiry online
+</h3>
 
-    {/* RIGHT – LOCATION */}
-    <div>
-      <h3 className="text-xl font-semibold text-red-600 mb-1">Location</h3>
-      <p className="text-gray-600 mb-4">
-        Hamriyah Free Zone, Sharjah <br />
-        P.O Box 42163
-      </p>
+<p className="text-gray-500 mb-8">
+We’d love to hear from you. Please fill out this form.
+</p>
 
-      <div className="rounded-xl overflow-hidden shadow-lg mb-6">
-        <iframe
-          src="https://www.google.com/maps?q=Hamriyah%20Free%20Zone%20Sharjah&output=embed"
-          className="w-full h-[280px] border-0"
-          loading="lazy"
-        ></iframe>
-      </div>
+<form onSubmit={handleSubmit} className="space-y-5">
 
-      <div className="space-y-3 text-sm">
-        <p>
-          <span className="text-red-600 font-medium">Call us:</span><br />
-          +971 50 9322 335
-        </p>
+<input
+type="text"
+placeholder="Enter your name"
+value={name}
+onChange={(e)=>setName(e.target.value)}
+className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+/>
 
-        <p>
-          <span className="text-red-600 font-medium">Email us:</span><br />
-          sales@oss-me.com
-        </p>
-      </div>
-    </div>
+<input
+type="email"
+placeholder="you@company.com"
+value={email}
+onChange={(e)=>setEmail(e.target.value)}
+className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+/>
 
-  </div>
+<input
+type="text"
+placeholder="+971 50 000 0000"
+value={phone}
+onChange={(e)=>setPhone(e.target.value)}
+className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+/>
+
+<textarea
+rows="4"
+placeholder="Leave us a message..."
+value={message}
+onChange={(e)=>setMessage(e.target.value)}
+className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+/>
+
+<label className="flex items-center gap-2 text-sm text-gray-500">
+<input type="checkbox" required />
+You agree to our privacy policy.
+</label>
+
+<button
+type="submit"
+className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:to-red-700 text-white py-3 rounded-lg font-medium transition"
+>
+Send Message
+</button>
+
+</form>
+</div>
+
+{/* RIGHT SIDE */}
+<div>
+<h3 className="text-xl font-semibold text-red-600 mb-1">Location</h3>
+
+<p className="text-gray-600 mb-4">
+Hamriyah Free Zone, Sharjah <br />
+P.O Box 42163
+</p>
+
+<div className="rounded-xl overflow-hidden shadow-lg mb-6">
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d57644.219902197685!2d55.553548!3d25.446161!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ef5f9dca6b63c8b%3A0x8c8e7c80f486f275!2sOSS%20FZC%20-%20Logistics!5e0!3m2!1sen!2sin!4v1770355968475!5m2!1sen!2sin"
+className="w-full h-[320px] border-0"
+loading="lazy"
+/>
+</div>
+
+<div className="space-y-3 text-sm">
+<p>
+<span className="text-red-600 font-medium">Call us:</span><br />
++971 50 9322 335
+</p>
+
+<p>
+<span className="text-red-600 font-medium">Email us:</span><br />
+sales@oss-me.com
+</p>
+</div>
+</div>
+
+</div>
 </section>
-
-      </>
-  )
-      }
+</>
+);
+}

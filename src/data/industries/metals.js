@@ -18,7 +18,7 @@ title:"Specialised Storage & Logistics Solutions for the Metals and Scrap Indust
 subtitle:"Streamline Your Metal and Scrap Operations – Request a Custom Solution",
 buttonText:"Request a Custom Solution",
 buttonLink:"/contact-us",
-backgroundImage:"/images/industries/metals-bg.jpg"
+backgroundImage:"/images/services/Yard-for-Rent-in-Sharjah.jpg"
 },
 
 

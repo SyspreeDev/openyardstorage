@@ -51,6 +51,8 @@ import IndustryPage from "./pages/industries-we-serve/IndustryPage";
 import LocationPage from "./pages/locations/LocationPage";
 import ServicesPage from "./pages/services";
 
+import ThankYou from "./pages/thank-you";
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -199,6 +201,7 @@ export default function App() {
         <Route path="/industries/:slug" element={<IndustryPage />} />
         <Route path="/locations/:slug" element={<LocationPage />} />
         <Route path="/services" element={<ServicesPage />} />
+        <Route path="/thank-you" element={<ThankYou />} />
     </Routes>
     
       
