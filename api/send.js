@@ -24,7 +24,6 @@ export async function POST(req) {
       <p><b>Name:</b> ${name}</p>
       <p><b>Email:</b> ${email}</p>
       <p><b>Phone:</b> ${phone}</p>
-      <p><b>Company:</b> ${company || "-"}</p>
       <p><b>Message:</b> ${message}</p>
     `
   });
