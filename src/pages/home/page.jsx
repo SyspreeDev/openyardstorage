@@ -12,7 +12,7 @@ import { blogs } from "../../data/blogs";
 import Hero from "../../components/Hero";
 import { Link } from "react-router-dom";
 import useMeta from "../../hooks/useMeta";
-
+import { useNavigate } from "react-router-dom";
 
 
 const projects = [
@@ -56,12 +56,51 @@ const faqs = [
 ];
 
 export default function Page() {
+
+  const navigate = useNavigate();
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
+  const [company, setCompany] = useState("");
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMeta(
     "OSS Logistics | Open Yard Storage & Freight UAE",
     "OSS Logistics provides open yard storage, freight forwarding, warehousing and project logistics solutions across UAE."
   );
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    const res = await fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name,
+        email,
+        phone,
+        message,
+      }),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      navigate("/thank-you"); // ✅ same redirect
+    } else {
+      alert("Failed to send");
+    }
+  } catch (error) {
+    console.log(error);
+    alert("Error sending message");
+  }
+};
 
   return (
     <main>
@@ -512,44 +551,51 @@ export default function Page() {
             </div>
 
             {/* Form */}
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleSubmit}>
 
               {/* Row 1 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <input
-                  type="text"
-                  placeholder="Name"
-                  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
-                />
+  type="text"
+  placeholder="Name"
+  value={name}
+  onChange={(e) => setName(e.target.value)}
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+/>
 
                 <input
-                  type="text"
-                  placeholder="Number"
-                  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
-                />
+  type="text"
+  placeholder="Number"
+  value={phone}
+  onChange={(e) => setPhone(e.target.value)}
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+/>
               </div>
 
               {/* Row 2 */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
                 <input
-                  type="email"
-                  placeholder="E-mail"
-                  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
-                />
-
+  type="email"
+  placeholder="E-mail"
+  value={email}
+  onChange={(e) => setEmail(e.target.value)}
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+/>
                 <input
-                  type="text"
-                  placeholder="Company"
-                  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
-                />
+  type="text"
+  placeholder="Company"
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+/>
               </div>
 
               {/* Message */}
               <textarea
-                rows="3"
-                placeholder="Message"
-                className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2 resize-none"
-              />
+  rows="3"
+  placeholder="Message"
+  value={message}
+  onChange={(e) => setMessage(e.target.value)}
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2 resize-none"
+/>
 
               {/* Button */}
               <button
