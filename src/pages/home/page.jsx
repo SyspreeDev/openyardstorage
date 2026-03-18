@@ -8,7 +8,9 @@ import { FiArrowUpRight, FiArrowRight } from "react-icons/fi";
 import "swiper/css";
 import "swiper/css/navigation";
 
-import { blogs } from "../../data/blogs";
+//import { blogs } from "../../data/blogs";
+import { useEffect } from "react";
+import { client } from "../../sanityClient";
 import Hero from "../../components/Hero";
 import { Link } from "react-router-dom";
 import useMeta from "../../hooks/useMeta";
@@ -57,6 +59,21 @@ const faqs = [
 
 export default function Page() {
 
+  useEffect(() => {
+  client
+    .fetch(`*[_type == "post" && !(_id in path("drafts.**"))]{
+  _id,
+  title,
+  slug,
+  mainImage{
+    asset->{url}
+  },
+  publishedAt
+}`)
+    .then((data) => setBlogs(data))
+    .catch(console.error);
+}, []);
+
   const navigate = useNavigate();
 
   const [name, setName] = useState("");
@@ -71,6 +88,8 @@ export default function Page() {
     "OSS Logistics | Open Yard Storage & Freight UAE",
     "OSS Logistics provides open yard storage, freight forwarding, warehousing and project logistics solutions across UAE."
   );
+
+  const [blogs, setBlogs] = useState([]);
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -432,30 +451,37 @@ export default function Page() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {blogs.slice(0, 3).map((blog) => {
-              const date = new Date(blog.date);
-              return (
-                <a key={blog.id} href={`/blogs/${blog.slug}`} className="group">
-                  <div className="relative overflow-hidden rounded-xl">
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      className="h-[260px] w-full object-cover group-hover:scale-105 transition"
-                    />
-                    <div className="absolute bottom-3 right-3 bg-white rounded-lg px-3 py-1 shadow">
-                      <p className="text-sm font-semibold">
-                        {date.getDate()}
-                      </p>
-                      <p className="text-[10px] text-gray-400 uppercase">
-                        {date.toLocaleString("en-US", { month: "short" })}
-                      </p>
-                    </div>
-                  </div>
-                  <h3 className="mt-4 font-medium text-gray-700">
-                    {blog.title}
-                  </h3>
-                </a>
-              );
-            })}
+  const date = new Date(blog.publishedAt);
+
+  return (
+    <a
+      key={blog._id}
+      href={`/blogs/${blog.slug?.current}`}
+      className="group"
+    >
+      <div className="relative overflow-hidden rounded-xl">
+        <img
+          src={blog.mainImage?.asset?.url}
+          alt={blog.title}
+          className="h-[260px] w-full object-cover group-hover:scale-105 transition"
+        />
+
+        <div className="absolute bottom-3 right-3 bg-white rounded-lg px-3 py-1 shadow">
+          <p className="text-sm font-semibold">
+            {date.getDate()}
+          </p>
+          <p className="text-[10px] text-gray-400 uppercase">
+            {date.toLocaleString("en-US", { month: "short" })}
+          </p>
+        </div>
+      </div>
+
+      <h3 className="mt-4 font-medium text-gray-700">
+        {blog.title}
+      </h3>
+    </a>
+  );
+})}
           </div>
         </div>
       </section>
