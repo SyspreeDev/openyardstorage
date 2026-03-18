@@ -50,6 +50,9 @@ import WarehouseStorageSpace from "./pages/services/WarehouseStorageSpace";
 import IndustryPage from "./pages/industries-we-serve/IndustryPage";
 import LocationPage from "./pages/locations/LocationPage";
 import ServicesPage from "./pages/services";
+import BlogDetail from "./pages/BlogDetail";
+import News from "./pages/News";
+
 
 import ThankYou from "./pages/thank-you";
 
@@ -202,6 +205,9 @@ export default function App() {
         <Route path="/locations/:slug" element={<LocationPage />} />
         <Route path="/services" element={<ServicesPage />} />
         <Route path="/thank-you" element={<ThankYou />} />
+        <Route path="/blogs/:slug" element={<BlogDetail />} />
+        <Route path="/news" element={<News />} />
+        
     </Routes>
     
       

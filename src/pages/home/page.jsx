@@ -17,6 +17,7 @@ import useMeta from "../../hooks/useMeta";
 import { useNavigate } from "react-router-dom";
 
 
+
 const projects = [
   {
     title: "Weatherford",
@@ -59,17 +60,19 @@ const faqs = [
 
 export default function Page() {
 
-  useEffect(() => {
+useEffect(() => {
   client
-    .fetch(`*[_type == "post" && !(_id in path("drafts.**"))]{
-  _id,
-  title,
-  slug,
-  mainImage{
-    asset->{url}
-  },
-  publishedAt
-}`)
+    .fetch(`*[_type == "post"] | order(publishedAt desc){
+      _id,
+      title,
+      slug,
+      publishedAt,
+      mainImage{
+        asset->{
+          url
+        }
+      }
+    }`)
     .then((data) => setBlogs(data))
     .catch(console.error);
 }, []);

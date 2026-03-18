@@ -1,6 +1,18 @@
 import { FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
+
+  const socialLinks = [
+  {
+    icon: FaFacebookF,
+    link: "https://www.facebook.com/ossfzchamriyah/",
+  },
+  {
+    icon: FaLinkedinIn,
+    link: "https://www.linkedin.com/company/oss-fzc/",
+  },
+];
   return (
     <footer className="bg-white">
 
@@ -20,46 +32,75 @@ export default function Footer() {
               Customs clearance in Sharjah, Dubai and other parts of emirates.
             </p>
 
+            
             {/* Social Icons */}
-            <div className="flex gap-4">
-              {[FaFacebookF, FaInstagram, FaLinkedinIn, FaYoutube].map(
-                (Icon, i) => (
-                  <a
-                    key={i}
-                    href="#"
-                    className="w-10 h-10 rounded-full bg-red-100 text-red-600
-                               flex items-center justify-center
-                               hover:bg-red-600 hover:text-white transition"
-                  >
-                    <Icon size={16} />
-                  </a>
-                )
-              )}
-            </div>
+           <div className="flex gap-4">
+  {socialLinks.map((item, i) => {
+    const Icon = item.icon;
+
+    return (
+      <a
+        key={i}
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-10 h-10 rounded-full bg-red-100 text-red-600
+                   flex items-center justify-center
+                   hover:bg-red-600 hover:text-white transition"
+      >
+        <Icon size={16} />
+      </a>
+    );
+  })}
+</div>
           </div>
 
           {/* QUICK LINKS */}
           <div>
             <h4 className="text-red-600 font-semibold mb-6">Quick Links</h4>
             <ul className="space-y-3 text-gray-500 text-sm">
-              <li><a href="#" className="hover:text-red-600">Home</a></li>
-              <li><a href="#" className="hover:text-red-600">About</a></li>
-              <li><a href="#" className="hover:text-red-600">FAQ</a></li>
-              <li><a href="#" className="hover:text-red-600">Services</a></li>
-              <li><a href="#" className="hover:text-red-600">Contact</a></li>
-            </ul>
+  <li><Link to="/" className="hover:text-red-600">Home</Link></li>
+  <li><Link to="about/our-story" className="hover:text-red-600">About</Link></li>
+  <li><Link to="/faq" className="hover:text-red-600">FAQ</Link></li>
+  <li><Link to="/services" className="hover:text-red-600">Services</Link></li>
+  <li><Link to="/contact" className="hover:text-red-600">Contact</Link></li>
+
+  {/* ✅ ADD HERE */}
+  <li><Link to="/terms" className="hover:text-red-600">Terms & Conditions</Link></li>
+  
+</ul>
           </div>
 
           {/* SERVICES */}
           <div>
             <h4 className="text-red-600 font-semibold mb-6">Services</h4>
             <ul className="space-y-3 text-gray-500 text-sm">
-              <li>Air Freight</li>
-              <li>Sea Freight</li>
-              <li>Land Transport</li>
-              <li>Warehousing</li>
-              <li>Custom clearance</li>
-            </ul>
+  <li>
+    <Link to="/services/international-shipping-air" className="hover:text-red-600">
+      International Shipping Air
+    </Link>
+  </li>
+  <li>
+    <Link to="/services/health-care-storage-solutions" className="hover:text-red-600">
+      Health Care Storage Solutions
+    </Link>
+  </li>
+  <li>
+    <Link to="/services/logistics-transport-sharjah" className="hover:text-red-600">
+      Logistics Transport Sharjah
+    </Link>
+  </li>
+  <li>
+    <Link to="/services/storage-warehouse-dubai" className="hover:text-red-600">
+      Storage Warehouse Dubai
+    </Link>
+  </li>
+  <li>
+    <Link to="/services/container-freight-logistics" className="hover:text-red-600">
+      Container Freight Logistics
+    </Link>
+  </li>
+</ul>
           </div>
 
           {/* LOCATION */}
@@ -93,7 +134,7 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="bg-red-600 py-4 text-center">
         <p className="text-white text-sm">
-          © 2025 . OSS . All Rights Reserved
+          © 2026 . OSS . All Rights Reserved
         </p>
       </div>
 
