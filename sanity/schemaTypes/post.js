@@ -11,6 +11,13 @@ export default defineType({
       type: 'string',
     }),
     defineField({
+  name: 'description',
+  title: 'Blog Description',
+  type: 'text',
+  rows: 3,
+  description: 'Short summary for blog listing and SEO',
+}),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -49,6 +56,7 @@ export default defineType({
       title: 'Body',
       type: 'blockContent',
     }),
+
   ],
 
   preview: {
