@@ -125,6 +125,55 @@ useEffect(() => {
   }
 };
 
+const services = [
+    {
+      title: "Ship Freight",
+      image: "/images/ship-freight.jpg",
+      link: "/services/freight-shipping-service",
+    },
+    {
+      title: "Air Freight",
+      image: "/images/air-freight.png",
+      link: "/service/international-shipping-air",
+    },
+    {
+      title: "Land Transport",
+      image: "/images/land-transport.png",
+      link: "/services/freight-logistics-trucking",
+    },
+    {
+      title: "Open Yard Storage",
+      image: "/images/openyardstorage.png",
+      link: "/services/storage-facility-abu-dhabi",
+    },
+    {
+      title: "Customs Clearance",
+      image: "/images/custom.png",
+      link: "/services/break-bulk-cargo-clearance",
+    },
+    {
+      title: "Warehousing",
+      image: "/images/wareh.jpg",
+      link: "/service/warehouse-storage-space-for-rent",
+    },
+    {
+      title: "Cross Stuffing & Port Handling Services",
+      image: "/images/port-handling.jpg",
+      link: "/services/container-cross-stuffing",
+    },
+    {
+      title: "Container Certification & ISO Tank Decanting",
+      image: "/images/container.jpg",
+      link: "/service/container-logistics-transport-sharjah",
+    },
+    {
+      title: "Retail Partnership & e-Retailing Solutions",
+      image: "/images/retail.jpg",
+      link: "/services/inventory-management-solutions",
+    },
+  ];
+
+
   return (
     <main>
        <Hero />
@@ -193,62 +242,53 @@ useEffect(() => {
 
       {/* OUR SERVICES */}
       {/* OUR SERVICES */}
-<section className="py-24 text-center bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_55%,#FFC5C5_100%)]">
-  <div className="mx-auto max-w-[1400px] px-10">
+ <section className="py-24 text-center bg-[linear-gradient(90deg,#ffffff_0%,#ffffff_55%,#FFC5C5_100%)]">
+      <div className="mx-auto max-w-[1400px] px-10">
 
-    {/* Eyebrow */}
-    <div className="flex items-center justify-center gap-4">
-      <span className="w-24 h-px bg-gray-300"></span>
-      <p className="text-xs uppercase tracking-widest text-gray-400">
-        Our Services
-      </p>
-      <span className="w-24 h-px bg-gray-300"></span>
-    </div>
-
-    {/* Title */}
-    <h2 className="mt-4 text-4xl font-bold text-gray-800">
-      Enhancing Your Productivity, <br />
-      <span className="text-red-600">Increasing Your Efficiency</span>
-    </h2>
-
-    {/* Services Grid */}
-    <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8 justify-items-center">
-
-      {[
-        { title: "Ship Freight", image: "/images/ship-freight.jpg" },
-        { title: "Air Freight", image: "/images/air-freight.png" },
-        { title: "Land Transport", image: "/images/land-transport.png" },
-        { title: "Open Yard Storage", image: "/images/openyardstorage.png" },
-        { title: "Customs Clearance", image: "/images/custom.png" },
-        { title: "Warehousing", image: "/images/wareh.jpg" },
-        { title: "Cross Stuffing & Port Handling Services", image: "/images/port-handling.jpg" },
-        { title: "Container Certification & ISO Tank Decanting", image: "/images/container.jpg" },
-        { title: "Retail Partnership & e-Retailing Solutions", image: "/images/retail.jpg" },
-      ].map((service, index) => (
-        <div
-          key={index}
-          className="group relative w-[180px] h-[180px] sm:w-[170px] sm:h-[170px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full overflow-hidden cursor-pointer"
-        >
-          {/* Image */}
-          <img
-            src={service.image}
-            alt={service.title}
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-          />
-
-          {/* Overlay */}
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white px-4">
-            <span className="text-center leading-snug text-sm md:text-base font-medium">
-              {service.title}
-            </span>
-            <FiArrowRight className="mt-2 text-lg" />
-          </div>
+        {/* Eyebrow */}
+        <div className="flex items-center justify-center gap-4">
+          <span className="w-24 h-px bg-gray-300"></span>
+          <p className="text-xs uppercase tracking-widest text-gray-400">
+            Our Services
+          </p>
+          <span className="w-24 h-px bg-gray-300"></span>
         </div>
-      ))}
 
-    </div>
-  </div>
-</section>
+        {/* Title */}
+        <h2 className="mt-4 text-4xl font-bold text-gray-800">
+          Enhancing Your Productivity, <br />
+          <span className="text-red-600">Increasing Your Efficiency</span>
+        </h2>
+
+        {/* Services Grid */}
+        <div className="mt-16 grid grid-cols-2 md:grid-cols-3 gap-y-16 gap-x-8 justify-items-center">
+
+          {services.map((service, index) => (
+            <Link to={service.link} key={index}>
+              <div className="group relative w-[180px] h-[180px] sm:w-[170px] sm:h-[170px] md:w-[220px] md:h-[220px] lg:w-[250px] lg:h-[250px] rounded-full overflow-hidden cursor-pointer transition hover:scale-105">
+                
+                {/* Image */}
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white px-4">
+                  <span className="text-center leading-snug text-sm md:text-base font-medium">
+                    {service.title}
+                  </span>
+                  <FiArrowRight className="mt-2 text-lg" />
+                </div>
+
+              </div>
+            </Link>
+          ))}
+
+        </div>
+      </div>
+    </section>
 
 
        <section className="bg-white py-24">
