@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const slides = [
   {
@@ -57,9 +58,11 @@ export default function Hero() {
             delivery across the globe.
           </p>
 
-          <button className="mt-8 rounded-md border border-white px-7 py-3 text-sm transition hover:bg-white hover:text-black">
-            Let’s Move Together →
-          </button>
+          <Link to="/contact-us">
+  <button className="mt-8 rounded-md border border-white px-7 py-3 text-sm transition hover:bg-white hover:text-black">
+    Let’s Move Together →
+  </button>
+</Link>
         </div>
 
         {/* RIGHT SLIDER */}

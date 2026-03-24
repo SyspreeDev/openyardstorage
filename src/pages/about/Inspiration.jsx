@@ -1,7 +1,12 @@
 import InnerHero from "../../components/InnerHero";
 import { motion } from "framer-motion";
+import useMeta from "../../hooks/useMeta";
 
 export default function Inspiration() {
+   useMeta(
+            "Inspiration Behind OSS Logistics Journey UAE | OSS",
+            "Discover the inspiration behind OSS and how it solves logistics delays with efficient storage, transport, and end-to-end industrial solutions across UAE."
+          );
   return (
     <>
       <InnerHero

@@ -23,7 +23,13 @@ export default function Footer() {
           {/* ABOUT */}
           <div>
             <div className="flex items-center gap-2 mb-6">
-              <img src="/images/footer-logo.png" alt="OSS Logo" className="h-16" />
+             <a href="/">
+              <img
+                src="/images/footer-logo.png"
+                alt="OSS Logo"
+                className="h-16 cursor-pointer"
+              />
+            </a>
             </div>
 
             <p className="text-gray-500 text-sm leading-relaxed mb-6">
@@ -63,7 +69,7 @@ export default function Footer() {
   <li><Link to="about/our-story" className="hover:text-red-600">About</Link></li>
   <li><Link to="/faq" className="hover:text-red-600">FAQ</Link></li>
   <li><Link to="/services" className="hover:text-red-600">Services</Link></li>
-  <li><Link to="/contact" className="hover:text-red-600">Contact</Link></li>
+  <li><Link to="/contact-us" className="hover:text-red-600">Contact</Link></li>
 
   {/* ✅ ADD HERE */}
   <li><Link to="/terms" className="hover:text-red-600">Terms & Conditions</Link></li>

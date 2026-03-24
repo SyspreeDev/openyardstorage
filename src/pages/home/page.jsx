@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 
 
+
 const projects = [
   {
     title: "Weatherford",
@@ -88,8 +89,8 @@ useEffect(() => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMeta(
-    "OSS Logistics | Open Yard Storage & Freight UAE",
-    "OSS Logistics provides open yard storage, freight forwarding, warehousing and project logistics solutions across UAE."
+    "Global Logistics & Warehousing Solutions UAE | OSS",
+    "OSS delivers scalable logistics solutions including freight, warehousing, transport, and yard storage across UAE with speed, precision, and reliability."
   );
 
   const [blogs, setBlogs] = useState([]);
@@ -174,12 +175,17 @@ useEffect(() => {
             </div>
 
             <div className="mt-12 flex gap-6">
+              <Link to="/vision-mission">
               <button className="rounded-md border px-10 py-4">
                 A Little About Us
               </button>
-              <button className="rounded-md bg-red-600 px-10 py-4 text-white">
+            </Link>
+
+            <Link to="/contact-us">
+              <button onClick={() => navigate("/contact-us")} className="rounded-md bg-red-600 px-10 py-4 text-white">
                 Connect With Us
               </button>
+            </Link>
             </div>
           </div>
         </div>
@@ -534,9 +540,11 @@ useEffect(() => {
           </div>
 
           <div className="mt-12 text-center">
+             <Link to="/inspiration">
             <button className="border border-red-600 px-6 py-2 text-red-600 rounded-md hover:bg-red-600 hover:text-white">
-              Learn More
+              Read More
             </button>
+             </Link>
           </div>
         </div>
       </section>
@@ -661,7 +669,7 @@ useEffect(() => {
           Grow With the Flow
         </h2>
 
-        <button className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition">
+        <button  onClick={() => navigate("/contact-us")} className="inline-flex items-center gap-2 bg-red-600 text-white px-8 py-3 rounded-md font-medium hover:bg-red-700 transition">
           Connect With Us
           <span>→</span>
         </button>

@@ -1,5 +1,6 @@
 import InnerHero from "../../components/InnerHero";
 import { Link } from "react-router-dom";
+import useMeta from "../../hooks/useMeta";
 
 const values = [
   {
@@ -35,6 +36,10 @@ const values = [
 ];
 
 export default function VisionMission() {
+   useMeta(
+          "Mission Vision & Values of OSS Logistics UAE | OSS",
+          "Discover the inspiration behind OSS and how it solves logistics delays with efficient storage, transport, and end-to-end industrial solutions across UAE."
+        );
   return (
     <>
       <InnerHero

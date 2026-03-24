@@ -1,6 +1,12 @@
 import InnerHero from "../../components/InnerHero";
+import useMeta from "../../hooks/useMeta";
+
 
 export default function OurStory() {
+  useMeta(
+      "About OSS Logistics & Growth Journey UAE | OSS",
+      "Learn how OSS evolved from storage to a full logistics partner, offering industrial solutions, warehousing, transport, and supply chain expertise across UAE."
+    );
   return (
     <>
       <InnerHero
@@ -65,7 +71,7 @@ export default function OurStory() {
               A Little About Us →
             </button>
 
-            <button className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
+            <button onClick={() => navigate("/contact")} className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
               Connect With Us →
             </button>
           </div>
@@ -245,7 +251,7 @@ export default function OurStory() {
           Grow With the Flow
         </h2>
 
-        <button className="flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-md text-sm font-semibold hover:bg-red-700 transition">
+        <button onClick={() => navigate("/contact")} className="flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-md text-sm font-semibold hover:bg-red-700 transition">
           Connect With Us
           <span className="text-lg">→</span>
         </button>

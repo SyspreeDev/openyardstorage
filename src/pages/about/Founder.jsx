@@ -1,6 +1,11 @@
 import React from "react";
+import useMeta from "../../hooks/useMeta";
 
 const Founder = () => {
+   useMeta(
+        "Leadership Message & Vision for Logistics UAE | OSS",
+        "Discover OSS leadership vision, commitment to timely delivery, and growth into a trusted logistics partner offering complete industrial solutions across UAE."
+      );
   return (
     <div className="w-full">
 
