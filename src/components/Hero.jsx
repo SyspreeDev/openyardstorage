@@ -1,31 +1,39 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-
-const slides = [
-  {
-    image: "/images/slider1.jpg",
-    title: "How much oil and Gas has been found in 2020?",
-  },
-  {
-    image: "/images/slider2.jpg",
-    title: "Global energy logistics trends in focus",
-  },
-   {
-    image: "/images/slider3.jpg",
-    title: "Global energy logistics trends in focus",
-  },
-];
+import { client } from "../sanityClient";
 
 export default function Hero() {
+  const [slides, setSlides] = useState([]);
   const [active, setActive] = useState(0);
 
-  // Auto slide
+  // ✅ Fetch blogs from Sanity
   useEffect(() => {
+    client
+      .fetch(`*[_type == "post"] | order(publishedAt desc)[0...5]{
+        _id,
+        title,
+        slug,
+        publishedAt,
+        mainImage{
+          asset->{url}
+        }
+      }`)
+      .then((data) => {
+        setSlides(data);
+      })
+      .catch(console.error);
+  }, []);
+
+  // ✅ Auto slide
+  useEffect(() => {
+    if (slides.length === 0) return;
+
     const interval = setInterval(() => {
       setActive((prev) => (prev + 1) % slides.length);
     }, 5000);
+
     return () => clearInterval(interval);
-  }, []);
+  }, [slides]);
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
@@ -58,70 +66,79 @@ export default function Hero() {
             delivery across the globe.
           </p>
 
-          <Link to="/contact-us">
-  <button className="mt-8 rounded-md border border-white px-7 py-3 text-sm transition hover:bg-white hover:text-black">
-    Let’s Move Together →
-  </button>
-</Link>
+          <Link to="/contact">
+            <button className="mt-8 rounded-md border border-white px-7 py-3 text-sm transition hover:bg-white hover:text-black">
+              Let’s Move Together →
+            </button>
+          </Link>
         </div>
 
         {/* RIGHT SLIDER */}
-<div className="relative ml-auto hidden lg:flex items-center mt-16">
+        {slides.length > 0 && (
+          <div className="relative ml-auto hidden lg:flex items-center mt-16">
 
+            {/* LEFT ARROW */}
+            <button
+              onClick={() =>
+                setActive((active - 1 + slides.length) % slides.length)
+              }
+              className="absolute -left-14 top-1/2 -translate-y-1/2 text-white text-4xl opacity-80 hover:opacity-100"
+            >
+              ‹
+            </button>
 
-  {/* LEFT ARROW */}
-  <button
-    onClick={() =>
-      setActive((active - 1 + slides.length) % slides.length)
-    }
-    className="absolute -left-14 top-1/2 -translate-y-1/2 text-white text-4xl opacity-80 hover:opacity-100"
-  >
-    ‹
-  </button>
+            {/* CARD */}
+            <div className="relative w-[380px] rounded-[28px] bg-white p-5 shadow-2xl">
+              
+              {/* IMAGE + LINK */}
+              <Link to={`/blogs/${slides[active]?.slug?.current}`}>
+                <img
+                  src={
+                    slides[active]?.mainImage?.asset?.url ||
+                    "/images/default.jpg"
+                  }
+                  alt={slides[active]?.title}
+                  className="h-[200px] w-full rounded-[22px] object-cover"
+                />
+              </Link>
 
-  {/* CARD */}
-  <div className="relative w-[380px] rounded-[28px] bg-white p-5 shadow-2xl">
-    <img
-      src={slides[active].image}
-      alt=""
-      className="h-[200px] w-full rounded-[22px] object-cover"
-    />
+              {/* TITLE */}
+              <p className="mt-4 text-sm font-medium text-gray-800">
+                {slides[active]?.title?.slice(0, 80)}...
+              </p>
 
-    <p className="mt-4 text-sm font-medium text-gray-800">
-      {slides[active].title}
-    </p>
+              {/* PROGRESS */}
+              <div className="mt-4 flex gap-2">
+                {slides.map((_, i) => (
+                  <span
+                    key={i}
+                    className={`h-1.5 w-8 rounded-full ${
+                      i === active ? "bg-red-500" : "bg-gray-300"
+                    }`}
+                  />
+                ))}
+              </div>
 
-    {/* Progress */}
-    <div className="mt-4 flex gap-2">
-      {slides.map((_, i) => (
-        <span
-          key={i}
-          className={`h-1.5 w-8 rounded-full ${
-            i === active ? "bg-red-500" : "bg-gray-300"
-          }`}
-        />
-      ))}
-    </div>
+              {/* RED ARROW BUTTON */}
+              <Link
+                to={`/blogs/${slides[active]?.slug?.current}`}
+                className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-600"
+              >
+                ↗
+              </Link>
+            </div>
 
-    {/* RED CIRCLE ARROW (inside card) */}
-    <button
-      onClick={() => setActive((active + 1) % slides.length)}
-      className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-600"
-    >
-      ↗
-    </button>
-  </div>
-
-  {/* RIGHT ARROW */}
-  <button
-    onClick={() => setActive((active + 1) % slides.length)}
-    className="absolute -right-14 top-1/2 -translate-y-1/2 text-white text-4xl opacity-80 hover:opacity-100"
-  >
-    ›
-  </button>
-</div>
-
-
+            {/* RIGHT ARROW */}
+            <button
+              onClick={() =>
+                setActive((active + 1) % slides.length)
+              }
+              className="absolute -right-14 top-1/2 -translate-y-1/2 text-white text-4xl opacity-80 hover:opacity-100"
+            >
+              ›
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
