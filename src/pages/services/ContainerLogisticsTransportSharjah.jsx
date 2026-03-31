@@ -82,12 +82,12 @@ export default function ContainerLogisticsTransportSharjah() {
             description: "Leveraging the latest tools for optimal logistics coordination."
           },
           {
-            image: "/icons/support.png",
+            image: "/icons/timely-Delivery.png",
             title: "Expert Team",
             description: "A seasoned team committed to excellence and client satisfaction."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/cost.png",
             title: "Tailored Solutions",
             description: "Customized tactics to fit your unique logistics needs."
           },

@@ -82,17 +82,17 @@ export default function FreightLogisticsServices() {
             description: "Employing the latest advancements for optimal efficiency."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/cost.png",
             title: "Tailored Strategies",
             description: "Custom solutions designed to fit your unique business requirements."
           },
           {
-            image: "/icons/support.png",
+            image: "/icons/Regulatory-exper.png",
             title: "Dedicated Support",
             description: "Our expert team is always at your service for seamless interaction."
           },
           {
-            image: "/icons/cost.png",
+            image: "/icons/timely-Delivery.png",
             title: "Transparent Operations",
             description: "We prioritize clear communication every step of the way."
           }

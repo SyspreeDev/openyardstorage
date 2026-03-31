@@ -53,9 +53,9 @@ const [projectsOpen, setProjectsOpen] = useState(false);
         {/* LOGO */}
         <Link to="/" className="flex items-center">
           <img
-            src="/images/logo.png"
+            src="/logos/oss-new.jpeg"
             alt="OSS Logistics"
-            className="h-24 w-auto -mt-4 drop-shadow-sm"
+            className="h-20 w-auto -mt-4 drop-shadow-sm"
           />
         </Link>
 

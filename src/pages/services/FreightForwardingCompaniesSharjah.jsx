@@ -92,7 +92,7 @@ export default function FreightForwardingCompaniesSharjah() {
             description: "Navigate global trade regulations confidently."
           },
           {
-            image: "/icons/support.png",
+            image: "/icons/timely-Delivery.png",
             title: "Customer-Centric Support",
             description: "Dedicated teams ensuring seamless coordination."
           }

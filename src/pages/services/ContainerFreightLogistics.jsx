@@ -82,7 +82,7 @@ export default function ContainerFreightLogistics() {
             description: "Cutting-edge tools for better logistics."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/timely-Delivery.png",
             title: "Tailored Strategies",
             description: "Solutions designed for your business."
           },

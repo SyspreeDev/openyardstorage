@@ -82,7 +82,7 @@ export default function ForwardingFreightCompanies() {
             description: "Real-time shipment tracking ensures transparency."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/timely-Delivery.png",
             title: "Custom Solutions",
             description: "Logistics strategies designed for your business."
           },
@@ -92,7 +92,7 @@ export default function ForwardingFreightCompanies() {
             description: "Optimize operations and maximize ROI."
           },
           {
-            image: "/icons/support.png",
+            image: "/icons/Regulatory-exper.png",
             title: "Expert Collaboration",
             description: "Partner-driven logistics solutions."
           }

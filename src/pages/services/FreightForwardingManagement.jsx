@@ -87,12 +87,12 @@ export default function FreightForwardingManagement() {
             description: "Strategic planning to minimize expenses."
           },
           {
-            image: "/icons/custom.png",
+            image: "/icons/Regulatory-exper.png",
             title: "Regulatory Compliance",
             description: "Ensuring adherence to all international rules."
           },
           {
-            image: "/icons/support.png",
+            image: "/icons/timely-Delivery.png",
             title: "Dedicated Support",
             description: "24/7 commitment to your success."
           }

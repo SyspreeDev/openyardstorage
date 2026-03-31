@@ -25,7 +25,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 mb-6">
              <a href="/">
               <img
-                src="/images/footer-logo.png"
+                src="/logos/oss.png"
                 alt="OSS Logo"
                 className="h-16 cursor-pointer"
               />
