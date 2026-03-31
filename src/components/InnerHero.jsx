@@ -28,9 +28,9 @@ export default function InnerHero({
           )}
 
           {/* MAIN TITLE */}
-          <h2 className="text-5xl md:text-5xl font-bold leading-tight">
+          <h1 className="text-5xl md:text-5xl font-bold leading-tight">
             {title}
-          </h2>
+          </h1>
 
           {/* SUBTITLE */}
           {subtitle && (
