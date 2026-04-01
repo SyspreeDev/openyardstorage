@@ -45,7 +45,7 @@ export default function VisionMission() {
       <InnerHero
        subtitle="The Principles That Drive Us Forward"
         buttonText="Discover Our Journey"
-        buttonLink="#story"
+        buttonLink="/contact-us"
         backgroundImage="/images/vision-bg.jpg"
       title="Our Mission, Vision & Values " /> 
 

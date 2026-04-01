@@ -129,8 +129,8 @@ const Founder = () => {
       </p>
 
       {/* CTA */}
-      <button className="mt-8 w-fit bg-red-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-red-700 transition">
-        View Our Journey →
+      <button onClick={() => navigate("/contact-us")} className="mt-8 w-fit bg-red-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-red-700 transition">
+       Contact Us →
       </button>
     </div>
 
