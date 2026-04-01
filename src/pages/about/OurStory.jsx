@@ -18,10 +18,11 @@ export default function OurStory() {
        
 
       <section className="w-full bg-white py-16">
-      <div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 gap-12 items-center">
+      {/*<div className="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
 
         {/* Left Image */}
-        <div className="flex justify-center">
+        {/*<div className="flex justify-center">
           <img
             src="/images/founder.jpg"  // replace with your image path
             alt="Founder"
@@ -238,7 +239,7 @@ export default function OurStory() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/grow-with-flow.jpg')", // replace image
+          backgroundImage: "url('/images/cta-about.jpg')", // replace image
         }}
       ></div>
 
