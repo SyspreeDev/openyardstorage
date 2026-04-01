@@ -1,8 +1,11 @@
 import InnerHero from "../../components/InnerHero";
 import useMeta from "../../hooks/useMeta";
+import { useNavigate } from "react-router-dom";
 
 
 export default function OurStory() {
+  const navigate = useNavigate();
+
   useMeta(
       "About OSS Logistics & Growth Journey UAE | OSS",
       "Learn how OSS evolved from storage to a full logistics partner, offering industrial solutions, warehousing, transport, and supply chain expertise across UAE."
@@ -12,7 +15,7 @@ export default function OurStory() {
       <InnerHero
        subtitle="Your One-Stop Solution for Industrial Needs"
         buttonText="Discover Our Journey"
-        buttonLink="#story"
+        buttonLink="#contact"
         backgroundImage="/images/ship-sailing-sea-against-sky.jpg"
       title="The OSS Story: From Storage to Strategic Logistics Partnership." /> 
        
@@ -68,11 +71,11 @@ export default function OurStory() {
 
           {/* Buttons */}
           <div className="flex gap-4 mt-8">
-            <button className="px-6 py-3 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-100 transition">
+            <button onClick={() => navigate("/about/vision-mission")} className="px-6 py-3 border border-gray-400 text-gray-700 rounded-md hover:bg-gray-100 transition">
               A Little About Us →
             </button>
 
-            <button onClick={() => navigate("/contact")} className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
+            <button onClick={() => navigate("/contact-us")} className="px-6 py-3 bg-red-600 text-white rounded-md hover:bg-red-700 transition">
               Connect With Us →
             </button>
           </div>
@@ -252,14 +255,14 @@ export default function OurStory() {
           Grow With the Flow
         </h2>
 
-        <button onClick={() => navigate("/contact")} className="flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-md text-sm font-semibold hover:bg-red-700 transition">
+        <button onClick={() => navigate("/contact-us")} className="flex items-center gap-2 bg-red-600 text-white px-8 py-4 rounded-md text-sm font-semibold hover:bg-red-700 transition">
           Connect With Us
           <span className="text-lg">→</span>
         </button>
       </div>
 
     </section>
-    <section className="w-full bg-white py-20">
+    <section className="w-full bg-white py-20" id="contact">
       <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-14 items-start">
 
         {/* Left Map */}
