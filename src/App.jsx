@@ -52,6 +52,7 @@ import LocationPage from "./pages/locations/LocationPage";
 import ServicesPage from "./pages/services";
 import BlogDetail from "./pages/BlogDetail";
 import News from "./pages/News";
+import Terms from "./pages/Terms";
 
 
 import ThankYou from "./pages/thank-you";
@@ -207,6 +208,7 @@ export default function App() {
         <Route path="/thank-you" element={<ThankYou />} />
         <Route path="/blogs/:slug" element={<BlogDetail />} />
         <Route path="/news" element={<News />} />
+        <Route path="/terms" element={<Terms />} />
         
     </Routes>
     
