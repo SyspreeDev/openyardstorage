@@ -388,7 +388,7 @@ const services = [
             </button>
           </div>
 
-          {/* CTA */}
+          {/* CTA 
           <a
             href="/projects"
             className="border border-red-600 text-red-600
@@ -396,7 +396,7 @@ const services = [
                        hover:bg-red-600 hover:text-white transition"
           >
             Learn More
-          </a>
+          </a>*/}
         </div>
 
       </div>

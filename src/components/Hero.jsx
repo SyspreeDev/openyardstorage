@@ -66,7 +66,7 @@ export default function Hero() {
             delivery across the globe.
           </p>
 
-          <Link to="/contact">
+          <Link to="/contact-us">
             <button className="mt-8 rounded-md border border-white px-7 py-3 text-sm transition hover:bg-white hover:text-black">
               Let’s Move Together →
             </button>
