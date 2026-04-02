@@ -1,12 +1,15 @@
 export default function Terms() {
   return (
-    <main className="bg-white py-20 px-6">
-      <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed">
+    
+    <main>
+       <section className="bg-gray-700 py-32 text-center">
+        <h1 className="text-4xl font-bold text-white/80">Terms & Conditions</h1>
+       
+      </section>
+      <div className="max-w-4xl mx-auto text-gray-700 leading-relaxed py-16">
 
         {/* TITLE */}
-        <h1 className="text-4xl font-bold mb-8 text-gray-900 py-8">
-          Terms & Conditions
-        </h1>
+        
 
         <p className="mb-4">
           Terms & Conditions in using <strong>www.openyardstorage.com</strong> website.
