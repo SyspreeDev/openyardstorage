@@ -67,7 +67,7 @@ export default function Footer() {
             <ul className="space-y-3 text-gray-500 text-sm">
   <li><Link to="/" className="hover:text-red-600">Home</Link></li>
   <li><Link to="about/our-story" className="hover:text-red-600">About</Link></li>
-  <li><Link to="/faq" className="hover:text-red-600">FAQ</Link></li>
+  
   <li><Link to="/services" className="hover:text-red-600">Services</Link></li>
   <li><Link to="/contact-us" className="hover:text-red-600">Contact</Link></li>
 
@@ -82,7 +82,7 @@ export default function Footer() {
             <h4 className="text-red-600 font-semibold mb-6">Services</h4>
             <ul className="space-y-3 text-gray-500 text-sm">
   <li>
-    <Link to="/services/international-shipping-air" className="hover:text-red-600">
+    <Link to="/services/freight-shipping-service" className="hover:text-red-600">
       International Shipping Air
     </Link>
   </li>
@@ -102,7 +102,7 @@ export default function Footer() {
     </Link>
   </li>
   <li>
-    <Link to="/services/container-freight-logistics" className="hover:text-red-600">
+    <Link to="/services/container-logistics-transport-sharjah" className="hover:text-red-600">
       Container Freight Logistics
     </Link>
   </li>
