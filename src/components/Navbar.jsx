@@ -55,7 +55,7 @@ const [projectsOpen, setProjectsOpen] = useState(false);
           <img
             src="/logos/oss-new.jpeg"
             alt="OSS Logistics"
-            className="h-20 w-auto -mt-4 drop-shadow-sm"
+            className="h-16 w-auto -mt-4 drop-shadow-sm"
           />
         </Link>
 
