@@ -141,7 +141,7 @@ export default function Footer() {
       {/* BOTTOM BAR */}
       <div className="bg-red-600 py-4 text-center">
         <p className="text-white text-sm">
-          © 2026 . OSS . All Rights Reserved
+          © 2026 . OSS . All Rights Reserved Designed By <a href="https://syspree.com/">Syspree Digital</a>
         </p>
       </div>
 
