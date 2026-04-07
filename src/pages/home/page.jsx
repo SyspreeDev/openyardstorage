@@ -224,7 +224,7 @@ const services = [
             </div>
 
             <div className="mt-12 flex gap-6">
-              <Link to="/vision-mission">
+              <Link to="/about/vision-mission">
               <button className="rounded-md border px-10 py-4">
                 A Little About Us
               </button>
