@@ -99,7 +99,7 @@ useEffect(() => {
   e.preventDefault();
 
   try {
-    const res = await fetch("/api/send", {
+    const res = await fetch("/api/route", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
