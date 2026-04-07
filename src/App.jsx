@@ -12,6 +12,9 @@ import YardForRentInSharjah from "./pages/services/yard-for-rent-sharjah";
 import ContactUs from "./pages/contact-us/Contact-us";
 
 import WeatherfordDrillingInternational from "./pages/projects/weatherford-drilling-International";
+import Apache from "./pages/projects/apache";
+import TrinidadDrilling from "./pages/projects/trinidad-drilling";
+
 import WoodenCrating from "./pages/services/wooden-crating";
 import TemperatureControlledWarehouse from "./pages/services/temperature-controlled-warehouse";
 import StorageWarehouseForRent from "./pages/services/storage-warehouse-for-rent";
@@ -73,6 +76,8 @@ export default function App() {
         
         <Route path="/contact-us" element={<ContactUs />} />
         <Route path="/projects/weatherford-drilling-international" element={<WeatherfordDrillingInternational />}/>
+        <Route path="/projects/apache" element={<Apache />}/>
+         <Route path="/projects/trinidad-drilling" element={<TrinidadDrilling />}/>
         <Route path="/services/wooden-crating" element={<WoodenCrating />} />
         <Route path="/services/temperature-controlled-warehouse" element={<TemperatureControlledWarehouse />} />
         <Route path="/services/storage-warehouse-for-rent" element={<StorageWarehouseForRent />} />

@@ -5,12 +5,15 @@ export async function POST(req) {
   const { name, email, phone, company, message } = await req.json();
 
   const transporter = nodemailer.createTransport({
+    host: "mx.easymail.ca",
+    port: 587,
+    secure: false,
     host: "mail.easymail.ca",
     port: 587,
     secure: false,
     auth: {
       user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS
+      pass: process.env.EMAIL_PASSWORD,
     }
   });
 
