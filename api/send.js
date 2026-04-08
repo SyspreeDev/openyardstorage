@@ -1,28 +1,37 @@
-import { Resend } from "resend";
+import nodemailer from "nodemailer";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+export async function POST(req) {
+ try {
+  const { name, email, phone, company, message } = await req.json();
 
-export default async function handler(req, res) {
-  try {
-    const { name, email, phone, message } = req.body;
+  const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true,
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASS
+    }
+  });
 
-    const response = await resend.emails.send({
-      from: "onboarding@resend.dev", // temp (later change)
-      to: "sales@oss-me.com",
-      subject: "New Contact Form",
-      html: `
-        <h3>New Contact Form</h3>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Message:</b> ${message}</p>
-      `,
-    });
+  await transporter.sendMail({
+    from: `"${name}" <${process.env.EMAIL_USER}>`,
+    replyTo: email,
+    to: process.env.EMAIL_TO,
+    subject: "New Contact Form",
+    html: `
+      <h3>New Contact Form</h3>
+      <p><b>Name:</b> ${name}</p>
+      <p><b>Email:</b> ${email}</p>
+      <p><b>Phone:</b> ${phone}</p>
+      <p><b>Message:</b> ${message}</p>
+    `
+  });
 
-    res.status(200).json({ success: true });
+  return Response.json({ success: true });
 
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ success: false });
-  }
+ } catch (error) {
+  console.log("MAIL ERROR:", error);
+  return Response.json({ success: false, error: error.message }, { status: 500 });
+ }
 }
