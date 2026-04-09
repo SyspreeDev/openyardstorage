@@ -48,16 +48,23 @@ const [projectsOpen, setProjectsOpen] = useState(false);
 
   return (
     <header className="absolute top-0 left-0 z-50 w-full">
-      <div className="relative mx-auto flex max-w-[1400px] items-center px-6 py-4 text-white">
+      <div className="relative mx-auto flex max-w-[1400px] items-center px-6  text-white">
 
         {/* LOGO */}
-        <Link to="/" className="flex items-center">
-          <img
-            src="/logos/oss-new.jpeg"
-            alt="OSS Logistics"
-            className="h-16 w-auto -mt-4 drop-shadow-sm"
-          />
-        </Link>
+       <Link to="/" className="block ml-4 -mt-2">
+    <div className="relative bg-white rounded-t-none rounded-b-2xl 
+                  shadow-[0_12px_30px_rgba(0,0,0,0.25)] 
+                  px-5 py-8 overflow-hidden">
+    {/* Bottom curve ONLY */}
+    <div className="absolute bottom-0 left-0 w-full h-2 bg-red-600 rounded-b-[50px]"></div>
+
+    <img
+      src="/logos/oss-new.jpeg"
+      alt="OSS Logistics"
+      className="h-12 w-auto relative z-10"
+    />
+  </div>
+</Link>
 
         {/* DESKTOP MENU */}
         <nav className="mx-auto hidden md:flex items-center gap-10 text-[15px] font-medium text-white/90">
