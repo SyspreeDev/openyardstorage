@@ -57,9 +57,10 @@ export default function Hero() {
         
         {/* LEFT TEXT */}
         <div className="max-w-xl text-white">
-          <h1 className="text-[56px] leading-[1.1] font-bold">
-            We Move <br /> What Matters.
-          </h1>
+          <h1 className="text-[56px] leading-[1.1] font-bold drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]">
+  We <span className="text-[#FB1C24]">Move</span> <br />
+  What <span className="text-[#FB1C24]">Matters.</span>
+</h1>
 
           <p className="mt-5 max-w-md text-base text-gray-200">
             Agile logistics solutions built for scale, speed, and seamless
