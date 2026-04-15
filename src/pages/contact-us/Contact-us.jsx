@@ -72,7 +72,7 @@ placeholder="Enter your name"
 value={name}
 onChange={(e)=>setName(e.target.value)}
 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-/>
+required/>
 
 <input
 type="email"
@@ -80,18 +80,18 @@ placeholder="you@company.com"
 value={email}
 onChange={(e)=>setEmail(e.target.value)}
 className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
-/>
+required />
 
 <input
 type="text"
 placeholder="+971 50 000 0000"
 value={phone}
-onChange={(e)=>setPhone(e.target.value)}
-className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none"
+onChange={(e)=>setPhone(e.target.value)} 
+className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-2 focus:ring-red-500 outline-none" required
 />
 
 <textarea
-rows="4"
+rows="4"cd 
 placeholder="Leave us a message..."
 value={message}
 onChange={(e)=>setMessage(e.target.value)}
