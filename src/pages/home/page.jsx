@@ -637,7 +637,7 @@ const services = [
   placeholder="Name"
   value={name}
   onChange={(e) => setName(e.target.value)}
-  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2" required
 />
 
                 <input
@@ -645,7 +645,7 @@ const services = [
   placeholder="Number"
   value={phone}
   onChange={(e) => setPhone(e.target.value)}
-  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2" required
 />
               </div>
 
@@ -656,7 +656,7 @@ const services = [
   placeholder="E-mail"
   value={email}
   onChange={(e) => setEmail(e.target.value)}
-  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2"
+  className="w-full border-b border-gray-300 focus:border-red-600 outline-none pb-2" required
 />
                 <input
   type="text"
