@@ -68,22 +68,22 @@ description:
 
 features:[
 {
-image:"/icons/staging.png",
+image:"/icons/cost.png",
 title:"Staged Material Release",
 description:"Deliver materials in sync with construction phases."
 },
 {
-image:"/icons/storage.png",
+image:"/icons/timely-Delivery.png",
 title:"High-Capacity Open Yards",
 description:"Designed for bulk, long-length, and heavy materials."
 },
 {
-image:"/icons/security.png",
+image:"/icons/Regulatory-exper.png",
 title:"Secure Industrial Storage",
 description:"Controlled access and monitored facilities."
 },
 {
-image:"/icons/coordination.png",
+image:"/icons/Real-time.png",
 title:"Operational Coordination",
 description:"Aligned with construction schedules."
 }

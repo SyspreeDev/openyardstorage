@@ -1,5 +1,7 @@
 import React from "react";
 import useMeta from "../../hooks/useMeta";
+import { Link } from "react-router-dom";
+
 
 const Founder = () => {
    useMeta(
@@ -129,9 +131,12 @@ const Founder = () => {
       </p>
 
       {/* CTA */}
-      <button onClick={() => navigate("/contact-us")} className="mt-8 w-fit bg-red-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-red-700 transition">
-       Contact Us →
-      </button>
+      <Link
+          to="/contact-us"
+          className="mt-8 w-fit bg-red-600 text-white px-8 py-4 rounded-md font-semibold hover:bg-red-700 transition"
+        >
+          Connect With Us →
+        </Link>
     </div>
 
   </div>

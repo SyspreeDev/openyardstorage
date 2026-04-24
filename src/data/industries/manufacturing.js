@@ -65,22 +65,22 @@ description:"OSS delivers logistics and open yard storage solutions engineered s
 
 features:[
 {
-image:"/icons/storage.png",
+image:"/icons/cost.png",
 title:"Industrial-Grade Storage Infrastructure",
 description:"Designed for heavy-duty and oversized manufacturing materials."
 },
 {
-image:"/icons/flexible.png",
+image:"/icons/Real-time.png",
 title:"Flexible Yard Space",
 description:"Scale storage up or down based on production demand."
 },
 {
-image:"/icons/coordination.png",
+image:"/icons/Regulatory-exper.png",
 title:"Operational Coordination",
 description:"Aligned with manufacturing schedules and workflows."
 },
 {
-image:"/icons/tracking.png",
+image:"/icons/timely-Delivery.png",
 title:"End-to-End Visibility",
 description:"Clear tracking and documentation at every stage."
 }

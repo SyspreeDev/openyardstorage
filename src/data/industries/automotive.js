@@ -68,7 +68,7 @@ description:
 
 features:[
 {
-image:"/icons/storage.png",
+image:"/icons/cost.png",
 title:"Vehicle Storage Facilities",
 description:"Secure open yard environments for fleet storage."
 },
@@ -83,7 +83,7 @@ title:"Secure Asset Protection",
 description:"Controlled access and monitored yards."
 },
 {
-image:"/icons/tracking.png",
+image:"/icons/timely-Delivery.png",
 title:"Inventory Visibility",
 description:"Organised storage systems for clear tracking."
 }

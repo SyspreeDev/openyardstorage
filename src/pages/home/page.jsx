@@ -143,7 +143,7 @@ const services = [
     },
     {
       title: "Open Yard Storage",
-      image: "/images/openyardstorage.png",
+      image: "/images/openyardcost.png",
       link: "/services/storage-facility-abu-dhabi",
     },
     {
@@ -580,7 +580,7 @@ const services = [
           </div>
 
           <div className="mt-12 text-center">
-             <Link to="/inspiration">
+             <Link to="about/inspiration">
             <button className="border border-red-600 px-6 py-2 text-red-600 rounded-md hover:bg-red-600 hover:text-white">
               Read More
             </button>
