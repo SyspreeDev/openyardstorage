@@ -143,7 +143,7 @@ const services = [
     },
     {
       title: "Open Yard Storage",
-      image: "/images/openyardcost.png",
+      image: "/images/openyardstorage-home.png",
       link: "/services/storage-facility-abu-dhabi",
     },
     {
