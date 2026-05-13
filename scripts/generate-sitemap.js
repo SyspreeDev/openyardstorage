@@ -2,7 +2,7 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { writeFileSync } from "fs";
 import { globSync } from "glob";
 
-// IMPORT BLOGS
+// BLOG DATA
 import { blogs } from "../src/data/blogs.js";
 
 const hostname = "https://openyardstorage.com";
@@ -43,32 +43,40 @@ const blogRoutes = blogs.map((blog) => {
 
 // INDUSTRY ROUTES
 const industryRoutes = industryFiles.map((file) => {
-  return (
-    "/industries/" +
-    file
-      .split("/")
-      .pop()
-      .replace(".js", "")
-  );
+  const cleanFile = file
+    .replace(/^src[\/\\]data[\/\\]industries[\/\\]/, "")
+    .replace(/\\/g, "/")
+    .replace(".js", "");
+
+  return `/industries/${cleanFile}`;
 });
 
 // LOCATION ROUTES
 const locationRoutes = locationFiles.map((file) => {
-  return (
-    "/locations/" +
-    file
-      .split("/")
-      .pop()
-      .replace(".js", "")
-  );
-});
+  const cleanFile = file
+    .replace(/^src[\/\\]data[\/\\]locations[\/\\]/, "")
+    .replace(/\\/g, "/")
+    .replace(".js", "");
 
+  return `/locations/${cleanFile}`;
+});
+const customRoutes = [
+  "/warehousing-distribution",
+  "/open-yard-storage-facility",
+  "/about-us",
+  "/ground-cargo",
+  "/sea-freight",
+  "/contacts",
+  "/offshore-logistics",
+  "/ship-spares-clearance",
+];
 // ALL ROUTES
 const routes = [
   ...staticRoutes,
   ...blogRoutes,
   ...industryRoutes,
   ...locationRoutes,
+  ...customRoutes,
 ];
 
 async function generateSitemap() {
